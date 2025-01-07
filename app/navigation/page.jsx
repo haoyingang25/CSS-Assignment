@@ -7,7 +7,7 @@ const NavigationPage = () => {
   return (
     <div style={{ textAlign: "center", marginTop: "20px" }}>
       <h1>Navigation Page</h1>
-      <p>Explore navigation features here!</p>
+      <p>Google map navigation!</p>
     </div>
   );
 };
