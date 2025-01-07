@@ -1,0 +1,119 @@
+/* Container for carousel and search box */
+.carouselContainer {
+    position: relative;
+    width: 100%;
+    padding: 40px 30px 200px 30px;  /* More padding for spaciousness */
+    background-color: #fff;  /* Crisp white background */
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);  /* Elegant shadow for depth */
+    border-radius: 20px;  /* Larger, soft rounded corners */
+    margin-bottom: 50px;
+    font-family: 'Lora', serif;  /* Elegant font */
+}
+
+/* Search input box */
+.searchInput {
+    width: 100%;
+    padding: 18px;
+    margin-bottom: 35px; /* More space between search and carousel */
+    font-size: 18px;
+    border-radius: 12px;
+    border: 1px solid #ddd; /* Soft border */
+    background-color: #fafafa; /* Light background */
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease; /* Smooth transition on focus */
+}
+
+.searchInput:focus {
+    border-color: #bfa15f;  /* Luxurious gold accent on focus */
+    box-shadow: 0 0 10px rgba(191, 161, 95, 0.5);  /* Soft golden glow */
+}
+
+/* Styling for the swiper container */
+.swiper {
+    width: 100%;
+    padding-bottom: 100px; /* Enough space for pagination */
+}
+
+/* Individual slide styling */
+.slide {
+    text-align: center;
+    padding: 25px;
+    background-color: #fafafa; /* Subtle background for each slide */
+    border-radius: 15px; /* Soft rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Image styling */
+.image {
+    width: 90%;
+    max-height: 800px; /* Larger height for images */
+    object-fit: cover;
+    border-radius: 15px; /* Rounded corners for image */
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15); /* Elegant image shadow */
+}
+
+/* Caption text styling */
+.caption {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;  /* Dark text for contrast */
+    margin-top: 20px;
+    text-transform: uppercase; /* Elegant uppercase text */
+    letter-spacing: 2px; /* Increased spacing for a luxurious feel */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);  /* Soft text shadow */
+}
+
+/* No results styling */
+.noResults {
+    text-align: center;
+    font-size: 26px;
+    color: #bdc3c7;  /* Soft gray for no results */
+    font-weight: 500; /* Slightly bolder for emphasis */
+}
+
+/* Description styling */
+.description {
+    font-size: 18px;
+    color: #777;
+    margin-top: 15px;
+    padding: 0 30px;
+    text-align: center;
+    font-style: italic; /* Adds sophistication */
+}
+
+/* Pagination dots styling */
+.swiper .swiper-pagination {
+    position: absolute;
+    bottom: -120px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-pagination-bullet {
+    background-color: #bfa15f; /* Luxurious gold color for pagination dots */
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet:hover {
+    background-color: #f39c12; /* Hover effect with a deeper gold */
+}
+
+/* Active pagination dot */
+.swiper-pagination-bullet-active {
+    background-color: #e67e22; /* Rich orange/golden tone for active dot */
+}
+
+
+/* Swiper container with space for navigation */
+.swiper {
+    position: relative; /* Ensure swiper container is positioned relative */
+}
+
+
