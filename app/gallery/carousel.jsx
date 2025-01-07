@@ -11,7 +11,7 @@ import styles from "../style/styleGallery.module.css"; // Adjust to your CSS pat
 const images = [
   { src: "/burger.jpg", alt: "Burger", description: "A delicious beef burger with fresh lettuce, cheese, and a soft bun." },
   { src: "/japanese food.jpg", alt: "Japanese Food", description: "A variety of traditional Japanese dishes including sushi and ramen." },
-  { src: "/chicken rice.jpeg", alt: "Chicken Rice", description: "Fragrant chicken rice served with tender, flavorful chicken pieces." },
+  { src: "/chicken rice.jpg", alt: "Chicken Rice", description: "Fragrant chicken rice served with tender, flavorful chicken pieces." },
   { src: "/pancakes.jpeg", alt: "Pancakes", description: "Fluffy pancakes served with syrup and fresh berries." },
   { src: "/korean.jpg", alt: "Korean Food", description: "A spicy Korean dish with bulgogi, kimchi, and rice." },
 ];
