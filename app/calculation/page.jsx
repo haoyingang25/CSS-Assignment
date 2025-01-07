@@ -7,9 +7,10 @@ const CalculationPage = () => {
   return (
     <div style={{ textAlign: "center", marginTop: "20px" }}>
       <h1>Calculation Page</h1>
-      <p>Perform your calculations here!</p>
+      <p>Calculate here!</p>
     </div>
   );
 };
 
 export default CalculationPage;
+
