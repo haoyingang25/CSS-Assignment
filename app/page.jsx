@@ -1,12 +1,13 @@
-// app/page.js
 import React from "react";
-import Carousel from "./gallery/carousel";
+import Carosel from "./gallery/carousel";
 
-export default function Home() {
+const HomePage = () => {
   return (
-    <main>
-      <h1>Cuisine Gallery</h1>
-      <Carousel />
+    <main style={{ backgroundColor: "#f7fdfd", minHeight: "100vh" }}>
+      <Carosel />
     </main>
   );
-}
+};
+
+export default HomePage;
+
