@@ -52,14 +52,14 @@ const Carousel = () => {
   };
 
   // Get the favorite images from the main image list
-  const favoriteImages = images.filter((image) => favorites.includes(image.id));
+  const favoriteImages = images.filter((image) => favorites.includes(image.id)); //images array is being filtered. After filtering, favoriteImages will contain only those images that are in favorites.
 
   // Scroll to the Favorites section
   const scrollToFavorites = () => {
     if (favoritesRef.current) {
       favoritesRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  };
+  }; 
 
   // Scroll back to the main gallery section
   const goBackToGallery = () => {
@@ -73,10 +73,10 @@ const Carousel = () => {
     setFavorites(favorites.filter((favId) => favId !== id));
   };
 
-  // Clear all favorite images
+  // //Make the favorites array empty.
   const clearAllFavorites = () => {
-    setFavorites([]);
-  };
+    setFavorites([]); 
+  }; 
 
   return (
     <div className={styles.carouselContainer} ref={galleryRef}>
@@ -101,13 +101,13 @@ const Carousel = () => {
 
       {/* Swiper Carousel for displaying images */}
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]} // Enable navigation, pagination, and autoplay
+        modules={[Navigation, Pagination, Autoplay]} // Enable navigation, pagination = dots, and autoplay = every 3 seconds changes to new picture
         navigation // Add navigation arrows
         pagination={{ clickable: true }} // Enable clickable pagination dots
         autoplay={{ delay: 3000 }} // Automatically move to the next slide every 3 seconds
         spaceBetween={20} // Space between slides
         slidesPerView={1} // Number of slides visible at a time
-        loop={true} // Enable infinite looping
+        loop={true} // Enable infinite looping -> so that it can move back to the first picture smoothly
         className={styles.swiper}
       >
         {filteredImages.length > 0 ? (
@@ -137,14 +137,14 @@ const Carousel = () => {
         )}
       </Swiper>
 
-      {/* Favorites Section */}
+      {/* Favorites Section */} {/*checks if the array is empty, if its not, it will be rendered*/}
       {favorites.length > 0 && (
-        <div ref={favoritesRef} className={styles.favoritesSection}>
+        <div ref={favoritesRef} className={styles.favoritesSection}> {/*favoritesRef used to interact with the DOM for scrolling*/}
           <h2>Favorite Dishes</h2>
           <div className={styles.buttonContainer}>
 
             {/* Buttons to go back to gallery or clear all favorites */}
-            <button className={styles.backToGalleryButton} onClick={goBackToGallery}>
+            <button className={styles.backToGalleryButton} onClick={goBackToGallery}>{/* style: is already imported at the start, backToGallery is class name  */}
               Back to Gallery
             </button>
             <button className={styles.clearAllFavoritesButton} onClick={clearAllFavorites}>
