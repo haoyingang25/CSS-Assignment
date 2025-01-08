@@ -1,9 +1,9 @@
 // Import React and hooks for state management and references
-import React, { useState, useRef } from "react";
+import React, { useState, useRef } from "react"; //react library
 
 // Import Swiper and its modules for creating a carousel
-import { Swiper, SwiperSlide } from "swiper/react"; 
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";  //swiper is a library
+import { Navigation, Pagination, Autoplay } from "swiper/modules"; //additional modules from swiper that provides features 
 
 // Import Swiper's CSS for default styling
 import "swiper/css";
@@ -11,10 +11,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // Import Link component from Next.js for navigation between pages
-import Link from "next/link";
+import Link from "next/link"; //create navigation links, library from next.js
 
 // Import custom CSS module for styling the component
-import styles from "../style/styleGallery.module.css";
+import styles from "../style/styleGallery.module.css"; //own css module used to style the webpage
 
 // Array of images for the carousel
 const images = [
