@@ -1,6 +1,6 @@
 // app/cuisine/page.jsx
 "use client";
-
+// Import the React library and the Carousel component from the correct relative path
 import React from "react";
 import Carousel from "../gallery/carousel"; // Correct relative path
 
@@ -18,10 +18,11 @@ const CuisinePage = () => {
       >
         Visit the Different Cuisines!
       </h1>
-      <Carousel />
+      <Carousel /> {/*use it to display as a routing showcase*/}
     </div>
   );
 };
 
+// Export the component as default for use in the app
 export default CuisinePage;
 
