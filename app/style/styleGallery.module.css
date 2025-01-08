@@ -1,75 +1,135 @@
-/* Container for carousel and search box */
+/* Overall carousel container */
 .carouselContainer {
     position: relative;
     width: 100%;
-    padding: 40px 30px 200px 30px;  /* More padding for spaciousness */
+    padding: 40px 30px 200px 30px;  /* Spacious padding */
     background-color: #fff;  /* Crisp white background */
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);  /* Elegant shadow for depth */
-    border-radius: 20px;  /* Larger, soft rounded corners */
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);  /* Elegant shadow */
+    border-radius: 20px;  /* Soft rounded corners */
     margin-bottom: 50px;
-    font-family: 'Lora', serif;  /* Elegant font */
+    font-family: 'Lora', serif;  /* Elegant serif font */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+}
+
+/* Button container styling for side panel */
+.sideButtonContainer {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    z-index: 10;  /* Ensure the buttons stay on top of other elements */
+}
+
+/* View Favorites Button */
+.viewFavoritesButton {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #bfa15f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.viewFavoritesButton:hover {
+    background-color: #f39c12;
+    transform: scale(1.05);
+}
+
+/* Back to Gallery Button */
+.backToGalleryButton {
+    padding: 8px 16px; /* Adjusted to match the size of the clear favorites button */
+    font-size: 14px; /* Adjusted to match the size of the clear favorites button */
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.backToGalleryButton:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
 }
 
 /* Search input box */
 .searchInput {
     width: 100%;
     padding: 18px;
-    margin-bottom: 35px; /* More space between search and carousel */
+    margin-bottom: 35px;
     font-size: 18px;
     border-radius: 12px;
-    border: 1px solid #ddd; /* Soft border */
-    background-color: #fafafa; /* Light background */
+    border: 1px solid #ddd;  /* Soft border */
+    background-color: #fafafa;
     box-sizing: border-box;
     outline: none;
-    transition: all 0.3s ease; /* Smooth transition on focus */
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;  /* Cleaner, modern font */
 }
 
 .searchInput:focus {
-    border-color: #bfa15f;  /* Luxurious gold accent on focus */
+    border-color: #bfa15f;  /* Luxurious gold accent */
     box-shadow: 0 0 10px rgba(191, 161, 95, 0.5);  /* Soft golden glow */
 }
 
-/* Styling for the swiper container */
+/* Swiper container (carousel) */
 .swiper {
     width: 100%;
-    padding-bottom: 100px; /* Enough space for pagination */
+    padding-bottom: 100px;
+    position: relative;
 }
 
 /* Individual slide styling */
 .slide {
     text-align: center;
     padding: 25px;
-    background-color: #fafafa; /* Subtle background for each slide */
-    border-radius: 15px; /* Soft rounded corners */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    background-color: #fafafa;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slide:hover {
+    transform: scale(1.05); /* Subtle zoom effect */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
 
 /* Image styling */
 .image {
     width: 90%;
-    max-height: 800px; /* Larger height for images */
+    max-height: 800px;
     object-fit: cover;
-    border-radius: 15px; /* Rounded corners for image */
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15); /* Elegant image shadow */
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* Caption text styling */
 .caption {
     font-size: 24px;
     font-weight: bold;
-    color: #2c3e50;  /* Dark text for contrast */
+    color: #2c3e50;
     margin-top: 20px;
-    text-transform: uppercase; /* Elegant uppercase text */
-    letter-spacing: 2px; /* Increased spacing for a luxurious feel */
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);  /* Soft text shadow */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;  /* Sophisticated font */
 }
 
 /* No results styling */
 .noResults {
     text-align: center;
     font-size: 26px;
-    color: #bdc3c7;  /* Soft gray for no results */
-    font-weight: 500; /* Slightly bolder for emphasis */
+    color: #bdc3c7;
+    font-weight: 500;
 }
 
 /* Description styling */
@@ -79,7 +139,7 @@
     margin-top: 15px;
     padding: 0 30px;
     text-align: center;
-    font-style: italic; /* Adds sophistication */
+    font-style: italic;
 }
 
 /* Pagination dots styling */
@@ -93,7 +153,7 @@
 }
 
 .swiper-pagination-bullet {
-    background-color: #bfa15f; /* Luxurious gold color for pagination dots */
+    background-color: #bfa15f;
     width: 14px;
     height: 14px;
     border-radius: 50%;
@@ -102,18 +162,199 @@
 }
 
 .swiper-pagination-bullet:hover {
-    background-color: #f39c12; /* Hover effect with a deeper gold */
+    background-color: #f39c12;
 }
 
 /* Active pagination dot */
 .swiper-pagination-bullet-active {
-    background-color: #e67e22; /* Rich orange/golden tone for active dot */
+    background-color: #e67e22;
+}
+
+/* Favorite icon styling */
+.favoriteIcon {
+    font-size: 24px;
+    color: #bfa15f;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.favoriteIcon:hover {
+    color: #f39c12;  /* Gold highlight */
+}
+
+/* Favorites section */
+.favoritesSection {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid layout for favorite items */
+.favoritesGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;  /* Increased gap between items */
+    justify-content: center;
+    padding: 20px 0;
+}
+
+/* Favorite item card */
+.favoriteItem {
+    width: 220px;  /* Increased width for more space */
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    padding: 10px;  /* Added padding for better spacing */
+}
+
+.favoriteItem:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Favorite image */
+.favoriteImage {
+    width: 100%;
+    height: 200px;  /* Adjusted height to make the images less cramped */
+    object-fit: cover;  /* Ensures the image maintains aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.favoriteImage:hover {
+    transform: scale(1.1);  /* Zoom effect on hover */
 }
 
 
-/* Swiper container with space for navigation */
-.swiper {
-    position: relative; /* Ensure swiper container is positioned relative */
+
+/* Favorites Section */
+.favoritesSection {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Grid layout for favorite items */
+.favoritesGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;  /* Increased gap between items */
+    justify-content: center;
+    padding: 20px 0;
+}
+
+/* Favorite item card */
+.favoriteItem {
+    width: 220px;  /* Increased width for more space */
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    padding: 10px;  /* Added padding for better spacing */
+}
+
+.favoriteItem:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Favorite image */
+.favoriteImage {
+    width: 100%;
+    height: 200px;  /* Adjusted height to make the images less cramped */
+    object-fit: cover;  /* Ensures the image maintains aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.favoriteImage:hover {
+    transform: scale(1.1);  /* Zoom effect on hover */
+}
+
+.favoriteTitle {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* Back to Home Button Container */
+.backToHomeButtonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Back to Home Button */
+.backToHomeButton {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #2ecc71; /* Vibrant green for a fresh look */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Roboto', sans-serif;  /* Modern font */
+}
+
+.backToHomeButton:hover {
+    background-color: #27ae60;  /* Darker green for hover effect */
+    transform: scale(1.05);  /* Slight zoom effect */
+}
+
+/* Active state for back to home button (optional) */
+.backToHomeButton:active {
+    background-color: #1e8449;  /* Even darker green for click effect */
+    transform: scale(1);  /* Remove zoom effect on click */
+}
+
+
+/* Clear Favorite Button for each individual item */
+.clearFavoriteButton {
+    padding: 6px 12px;
+    font-size: 12px;
+    background-color: #e74c3c; /* Red color */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.clearFavoriteButton:hover {
+    background-color: #c0392b; /* Darker red for hover */
+    transform: scale(1.05);
+}
+
+.clearFavoriteButton:active {
+    background-color: #962d2b;  /* Even darker red for click effect */
+    transform: scale(1);  /* Remove zoom effect on click */
+}
+/* Clear All Favorites Button */
+.clearAllFavoritesButton {
+    padding: 8px 16px;  /* Same size as "Back to Gallery" */
+    font-size: 14px;  /* Same font size as "Back to Gallery" */
+    background-color:red;  /* Same blue color as "Back to Gallery" */
+    color: white;
+    border: none;
+    border-radius: 8px;  /* Rounded corners like the "Back to Gallery" button */
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;  /* Modern font */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+
+.clearAllFavoritesButton:active {
+    background-color: red;  /* Even darker blue for click effect */
+    transform: scale(1);  /* Remove zoom effect on click */
+}
 
