@@ -33,14 +33,14 @@
     color: white;
     border: none;
     border-radius: 8px;
-    cursor: pointer;
+    cursor: pointer; /* Indicates interactivity */
     transition: background-color 0.3s ease, transform 0.3s ease;
     font-family: 'Roboto', sans-serif;
 }
 
 .viewFavoritesButton:hover {
     background-color: #f39c12;
-    transform: scale(1.05);
+    transform: scale(1.05); /* Slight zoom effect for visual*/
 }
 
 /* Back to Gallery Button */
