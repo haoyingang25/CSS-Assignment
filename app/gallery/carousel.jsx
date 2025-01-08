@@ -13,6 +13,8 @@ const images = [
   { id: 3, src: "/chicken rice.jpg", alt: "Chicken Rice", description: "Fragrant chicken rice served with tender, flavorful chicken pieces." },
   { id: 4, src: "/pancakes.jpeg", alt: "Pancakes", description: "Fluffy pancakes served with syrup and fresh berries." },
   { id: 5, src: "/korean.jpg", alt: "Korean Food", description: "A spicy Korean dish with bulgogi, kimchi, and rice." },
+  { id: 6, src: "/tacos.jpg", alt: "Mexican Food", description: "Sweet, Tangy, Savoury." },
+  { id: 7, src: "/pizza.jpg", alt: "American Food", description: "Crispy and savoury." },
 ];
 
 const Carousel = () => {
