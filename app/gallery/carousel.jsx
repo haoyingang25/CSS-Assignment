@@ -181,11 +181,10 @@ const Carousel = () => {
   }, []);
 
   useEffect(() => {
-    // Update the filtered data based on the search query
     const filteredData = Object.keys(cuisineData).map(cuisine => {
       return {
         cuisine,
-        dishes: cuisineData[cuisine].filter((dish) =>
+        dishes: cuisineData[cuisine].filter(dish =>
           dish.alt.toLowerCase().includes(searchQuery.toLowerCase()) || 
           cuisine.toLowerCase().includes(searchQuery.toLowerCase())
         ),
@@ -220,7 +219,6 @@ const Carousel = () => {
 
   return (
     <div className={styles.carouselContainer}>
-      {/* Search Bar on the Left and View Favorites Button on the Right */}
       <div className={styles.topBar}>
         <div className={styles.searchSection}>
           <input
@@ -238,8 +236,8 @@ const Carousel = () => {
 
       {filteredCuisineData.length > 0 &&
         filteredCuisineData.map(({ cuisine, dishes }) => (
-          <div key={cuisine} className={styles.cuisineSection}>
-            {dishes.length > 0 ? (
+          <div id="gallerySection" key={cuisine} className={styles.cuisineSection}>
+            {dishes.length > 0 && (
               <>
                 <h2 className={styles.cuisineTitle}>{cuisine} Cuisine</h2>
                 <Swiper
@@ -283,16 +281,14 @@ const Carousel = () => {
                   ))}
                 </Swiper>
               </>
-            ) : null}
+            )}
           </div>
         ))}
 
-      {/* Show message if no search results found */}
       {filteredCuisineData.every(({ dishes }) => dishes.length === 0) && searchQuery && (
         <p className={styles.notFoundMessage}>No dishes or cuisines found!</p>
       )}
 
-      {/* Only render favorites section if there are favorites */}
       {favorites.length > 0 ? (
         <div id="favoritesSection" className={styles.favoritesSection}>
           <h2>Favorite Dishes</h2>
@@ -324,13 +320,29 @@ const Carousel = () => {
               </div>
             ))}
           </div>
+          <button className={styles.clearAllButton} onClick={clearAllFavorites}>
+            Clear All Favorites
+          </button>
         </div>
       ) : (
-        <p className={styles.noFavoritesMessage}>No favorite dishes yet.</p>
+        <div id="favoritesSection" className={styles.favoritesSection}>
+          <h2>No Favorites Yet</h2>
+          <p>Your favorite dishes will appear here once you add.</p>
+        </div>
       )}
+
+      <div className={styles.buttonGroup}>
+        <button className={styles.backToGalleryButton} onClick={() => document.getElementById("gallerySection").scrollIntoView({ behavior: "smooth" })}>
+          Back to Gallery
+        </button>
+        <Link href="/">
+          <button className={styles.backToHomeButton}>Back to Home</button>
+        </Link>
+      </div>
     </div>
   );
 };
 
 export default Carousel;
+
 

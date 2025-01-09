@@ -294,3 +294,30 @@
   outline: none; /* Remove focus outline */
   box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.5); /* Add focus outline */
 }
+
+/* Back to Gallery Button */
+.backToGalleryButton {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #8e44ad; /* Purple color for the button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow */
+}
+
+.backToGalleryButton:hover {
+  background-color: #9b59b6; /* Lighter purple on hover */
+  transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+.backToGalleryButton:active {
+  background-color: #7d3c8c; /* Darker purple when clicked */
+}
+
+.backToGalleryButton:focus {
+  outline: none; /* Remove focus outline */
+  box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.5); /* Add focus outline */
+}
