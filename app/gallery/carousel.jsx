@@ -186,7 +186,8 @@ const Carousel = () => {
       return {
         cuisine,
         dishes: cuisineData[cuisine].filter((dish) =>
-          dish.alt.toLowerCase().includes(searchQuery.toLowerCase())
+          dish.alt.toLowerCase().includes(searchQuery.toLowerCase()) || 
+          cuisine.toLowerCase().includes(searchQuery.toLowerCase())
         ),
       };
     });
@@ -224,7 +225,7 @@ const Carousel = () => {
         <div className={styles.searchSection}>
           <input
             type="text"
-            placeholder="Search for a dish..."
+            placeholder="Search for a dish or cuisine..."
             className={styles.searchInput}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -285,10 +286,10 @@ const Carousel = () => {
             ) : null}
           </div>
         ))}
-        
+
       {/* Show message if no search results found */}
       {filteredCuisineData.every(({ dishes }) => dishes.length === 0) && searchQuery && (
-        <p className={styles.notFoundMessage}>No dishes found!</p>
+        <p className={styles.notFoundMessage}>No dishes or cuisines found!</p>
       )}
 
       {/* Only render favorites section if there are favorites */}
@@ -323,24 +324,10 @@ const Carousel = () => {
               </div>
             ))}
           </div>
-
-          {/* Clear All Favorites Button */}
-          <button className={styles.clearAllButton} onClick={clearAllFavorites}>
-            Clear All Favorites
-          </button>
         </div>
       ) : (
-        <div id="favoritesSection" className={styles.favoritesSection}>
-          <h2>No Favorites Yet</h2>
-          <p>Your favorite dishes will appear here once you add.</p>
-        </div>
+        <p className={styles.noFavoritesMessage}>No favorite dishes yet.</p>
       )}
-
-      <div className={styles.backToHomeButtonContainer}>
-        <Link href="/">
-          <button className={styles.backToHomeButton}>Back to Home</button>
-        </Link>
-      </div>
     </div>
   );
 };
