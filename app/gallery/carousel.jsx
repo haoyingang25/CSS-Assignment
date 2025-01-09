@@ -17,7 +17,7 @@ const cuisineData = {
       src: "/chinese dumplings.jpg", 
       alt: "Chinese Dumplings", 
       description: "Steamed or fried dumplings filled with meat and vegetables.",
-      location: { name: "Dumpling House", address: "123 Chinatown Rd, Singapore" },
+      location: { name: "Dumpling", address: "1 Chinatown Rd, Singapore" },
       rating: { stars: 4.5, reviews: 120 },
     },
 
@@ -26,7 +26,7 @@ const cuisineData = {
       src: "/pekingDuck.jpg", 
       alt: "Peking Duck", 
       description: "Crispy duck served with pancakes and hoisin sauce.",
-      location: { name: "Peking Delight", address: "456 Orchard Rd, Singapore" },
+      location: { name: "Peking Restaruant", address: "6 Orchard Rd, Singapore" },
       rating: { stars: 4.5, reviews: 1200 },
     },
     
@@ -64,7 +64,7 @@ const cuisineData = {
       src: "/lasanga.png", 
       alt: "lasanga", 
       description: "Layers of Beef.",
-      location: { name: "Cafe", address: "789 Marina Bay Dr, Singapore" },
+      location: { name: "Chill Cafe", address: "33 Marina Bay Dr, Singapore" },
       rating: { stars: 4.5, reviews: 1000 },
     },
     { 
@@ -72,7 +72,7 @@ const cuisineData = {
       src: "/pizza.jpg", 
       alt: "Pizza", 
       description: "Crispy and golden crust and cheese pull.",
-      location: { name: "Pizza Maru", address: "101 City Square, Singapore" },
+      location: { name: "Pizza Heaven", address: "159 City Square, Singapore" },
       rating: { stars: 4.5, reviews: 1201 },
     },
 
@@ -87,10 +87,10 @@ const cuisineData = {
 
     { 
       id: 9, 
-      src: "/tiramisu.jpeg", 
-      alt: "Tiramisu", 
+      src: "/Tiramisu.jpg", 
+      alt: "Tiramisu Cake", 
       description: "Coffee lover?",
-      location: { name: "Cafe", address: "101 City Square, Singapore" },
+      location: { name: "Dessert Palace", address: "99 City Square, Singapore" },
       rating: { stars: 4.5, reviews: 1250 },
     },
   ],
@@ -100,8 +100,8 @@ const cuisineData = {
       id: 10, 
       src: "/bibimbap.jpg", 
       alt: "Bibimbap", 
-      description: "Rice topped with vegetables, meat, and a fried egg.",
-      location: { name: "Korean Kitchen", address: "404 Tanjong Pagar Rd, Singapore" },
+      description: "A bowl of rice which is good for your health.",
+      location: { name: "Korean", address: "66 Tanjong Pagar Rd, Singapore" },
       rating: { stars: 4.5, reviews: 1206 },
     },
     { 
@@ -109,7 +109,7 @@ const cuisineData = {
       src: "/kimchistew.jpg", 
       alt: "Kimchi Stew", 
       description: "Spicy.",
-      location: { name: "Gangnam Corn Dog", address: "505 Clake Quay Rd, Singapore" },
+      location: { name: "Stew waiting", address: "10 Clake Quay Rd, Singapore" },
       rating: { stars: 4.5, reviews: 1270 },
     },
 
@@ -118,7 +118,7 @@ const cuisineData = {
       src: "/kbbq.jpg", 
       alt: "Korean BBQ", 
       description: "Hear the sizzling sound?",
-      location: { name: "Gangnam KBBQ", address: "505 Tanjong Pagar Rd, Singapore" },
+      location: { name: "Gangnam KBBQ", address: "5 Tanjong Pagar Rd, Singapore" },
       rating: { stars: 4.5, reviews: 1210 },
     }
   ],
@@ -128,7 +128,7 @@ const cuisineData = {
       src: "/japanese food.jpg", 
       alt: "Sushi", 
       description: "Fresh sushi rolls with seafood and vegetables.",
-      location: { name: "Sushi Bar", address: "606 Clarke Quay, Singapore" },
+      location: { name: "Sushi", address: "66 Clarke Quay, Singapore" },
       rating: { stars: 4.5, reviews: 1290 },
     },
     { 
@@ -136,7 +136,7 @@ const cuisineData = {
       src: "/ramen.jpg", 
       alt: "Ramen", 
       description: "Japanese noodle soup with broth, meat, and egg.",
-      location: { name: "Ramen Street", address: "707 Orchard Gateway, Singapore" },
+      location: { name: "Ramen", address: "7 Orchard Gateway, Singapore" },
       rating: { stars: 4.5, reviews: 3000 },
     },
 
@@ -145,7 +145,7 @@ const cuisineData = {
       src: "/tonkatsu.jpg", 
       alt: "Tonkatsu", 
       description: "Japanese fried chicken/pork/beef.",
-      location: { name: "Tonkatsu Enbiton", address: "707 Westage Gateway, Singapore" },
+      location: { name: "Tonkatsu", address: "70 Westage Gateway, Singapore" },
       rating: { stars: 4.5, reviews: 5020 },
     },
 
@@ -154,22 +154,44 @@ const cuisineData = {
       src: "/Onigiri.jpg", 
       alt: "Onigiri", 
       description: "Japanese rice ball.",
-      location: { name: "Jap shop", address: "8 Westage Gateway, Singapore" },
+      location: { name: "Japan shop", address: "8 Westage Gateway, Singapore" },
+      rating: { stars: 4.5, reviews: 1209 },
+    },
+
+    { 
+      id: 17, 
+      src: "/pancakes.jpeg", 
+      alt: "Japanese Pancakes", 
+      description: "Soft and Fluffy, topped with sweet fruits.",
+      location: { name: "Pancake", address: "8 Vivo City, Singapore" },
       rating: { stars: 4.5, reviews: 1209 },
     }
 
-    
   ],
 };
 
 const Carousel = () => {
   const [favorites, setFavorites] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [filteredCuisineData, setFilteredCuisineData] = useState([]);
 
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     setFavorites(storedFavorites);
   }, []);
+
+  useEffect(() => {
+    // Update the filtered data based on the search query
+    const filteredData = Object.keys(cuisineData).map(cuisine => {
+      return {
+        cuisine,
+        dishes: cuisineData[cuisine].filter((dish) =>
+          dish.alt.toLowerCase().includes(searchQuery.toLowerCase())
+        ),
+      };
+    });
+    setFilteredCuisineData(filteredData);
+  }, [searchQuery]);
 
   const toggleFavorite = (id) => {
     let updatedFavorites;
@@ -190,12 +212,6 @@ const Carousel = () => {
   const favoriteImages = Object.values(cuisineData)
     .flat()
     .filter((image) => favorites.includes(image.id));
-
-  const filteredImages = Object.values(cuisineData)
-    .flat()
-    .filter((image) =>
-      image.alt.toLowerCase().includes(searchQuery.toLowerCase())
-    );
 
   const scrollToFavorites = () => {
     document.getElementById("favoritesSection").scrollIntoView({ behavior: "smooth" });
@@ -219,57 +235,64 @@ const Carousel = () => {
         </button>
       </div>
 
-      {Object.keys(cuisineData).map((cuisine) => (
-        <div key={cuisine} className={styles.cuisineSection}>
-          <h2 className={styles.cuisineTitle}>{cuisine} Cuisine</h2>
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 3000 }}
-            spaceBetween={20}
-            slidesPerView={1}
-            loop={true}
-            className={styles.swiper}
-          >
-            {cuisineData[cuisine]
-              .filter((dish) =>
-                dish.alt.toLowerCase().includes(searchQuery.toLowerCase())
-              )
-              .map((dish) => (
-                <SwiperSlide key={dish.id}>
-                  <div className={styles.slide}>
-                    <img src={dish.src} alt={dish.alt} className={styles.image} />
-                    <p className={styles.caption}>{dish.alt}</p>
-                    <p className={styles.description}>{dish.description}</p>
-                    {dish.location && (
-                      <div className={styles.locationSection}>
-                        <h3>Where to Try It:</h3>
-                        <p>{dish.location.name}</p>
-                        <p>{dish.location.address}</p>
+      {filteredCuisineData.length > 0 &&
+        filteredCuisineData.map(({ cuisine, dishes }) => (
+          <div key={cuisine} className={styles.cuisineSection}>
+            {dishes.length > 0 ? (
+              <>
+                <h2 className={styles.cuisineTitle}>{cuisine} Cuisine</h2>
+                <Swiper
+                  modules={[Navigation, Pagination, Autoplay]}
+                  navigation
+                  pagination={{ clickable: true }}
+                  autoplay={{ delay: 3000 }}
+                  spaceBetween={20}
+                  slidesPerView={1}
+                  loop={true}
+                  className={styles.swiper}
+                >
+                  {dishes.map((dish) => (
+                    <SwiperSlide key={dish.id}>
+                      <div className={styles.slide}>
+                        <img src={dish.src} alt={dish.alt} className={styles.image} />
+                        <p className={styles.caption}>{dish.alt}</p>
+                        <p className={styles.description}>{dish.description}</p>
+                        {dish.location && (
+                          <div className={styles.locationSection}>
+                            <h3>Where to Try It:</h3>
+                            <p>{dish.location.name}</p>
+                            <p>{dish.location.address}</p>
+                          </div>
+                        )}
+                        <div className={styles.ratingSection}>
+                          <p>
+                            {"★".repeat(Math.floor(dish.rating.stars))}
+                            {"☆".repeat(5 - Math.floor(dish.rating.stars))}
+                            ({dish.rating.stars.toFixed(1)}/5, {dish.rating.reviews} reviews)
+                          </p>
+                        </div>
+                        <div
+                          className={styles.favoriteIcon}
+                          onClick={() => toggleFavorite(dish.id)}
+                        >
+                          {favorites.includes(dish.id) ? "★" : "☆"}
+                        </div>
                       </div>
-                    )}
-                    <div className={styles.ratingSection}>
-                      <p>
-                        {"★".repeat(Math.floor(dish.rating.stars))}
-                        {"☆".repeat(5 - Math.floor(dish.rating.stars))}
-                        ({dish.rating.stars.toFixed(1)}/5, {dish.rating.reviews} reviews)
-                      </p>
-                    </div>
-                    <div
-                      className={styles.favoriteIcon}
-                      onClick={() => toggleFavorite(dish.id)}
-                    >
-                      {favorites.includes(dish.id) ? "★" : "☆"}
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-          </Swiper>
-        </div>
-      ))}
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </>
+            ) : null}
+          </div>
+        ))}
+        
+      {/* Show message if no search results found */}
+      {filteredCuisineData.every(({ dishes }) => dishes.length === 0) && searchQuery && (
+        <p className={styles.notFoundMessage}>No dishes found!</p>
+      )}
 
-      {favorites.length > 0 && (
+      {/* Only render favorites section if there are favorites */}
+      {favorites.length > 0 ? (
         <div id="favoritesSection" className={styles.favoritesSection}>
           <h2>Favorite Dishes</h2>
           <div className={styles.favoritesGrid}>
@@ -306,6 +329,11 @@ const Carousel = () => {
             Clear All Favorites
           </button>
         </div>
+      ) : (
+        <div id="favoritesSection" className={styles.favoritesSection}>
+          <h2>No Favorites Yet</h2>
+          <p>Your favorite dishes will appear here once you add.</p>
+        </div>
       )}
 
       <div className={styles.backToHomeButtonContainer}>
@@ -318,3 +346,4 @@ const Carousel = () => {
 };
 
 export default Carousel;
+
