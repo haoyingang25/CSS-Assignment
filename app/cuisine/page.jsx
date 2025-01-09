@@ -16,7 +16,7 @@ const CuisinePage = () => {
           fontWeight: "bold",
         }}
       >
-        Visit the Different Cuisines!
+        Visit the Top Rated Cuisines!
       </h1>
       <Carousel /> {/*use it to display as a routing showcase*/}
     </div>
