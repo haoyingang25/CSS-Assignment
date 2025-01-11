@@ -186,32 +186,47 @@ const cuisineData = {
 };
 
 const Carousel = () => {
-  const [favorites, setFavorites] = useState([]); // State for favorite dishes
-  const [searchQuery, setSearchQuery] = useState(""); // State for search query
-  const [filteredCuisineData, setFilteredCuisineData] = useState([]); // State for filtered cuisine data
+  // State variables
+  const [favorites, setFavorites] = useState([]); // Holds the list of favorite dishes
+  const [searchQuery, setSearchQuery] = useState(""); // Tracks the current search query
+  const [filteredCuisineData, setFilteredCuisineData] = useState([]); // Stores filtered cuisine data based on the search query
 
   // Load favorite dishes from local storage on initial render
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    setFavorites(storedFavorites);
+    setFavorites(storedFavorites); // Set favorites from local storage
   }, []);
 
-  // Filter cuisine data based on the search query
+  // Filter cuisine data based on search query
   useEffect(() => {
     const filteredData = Object.keys(cuisineData).map((cuisine) => {
-      return {
-        cuisine,
-        dishes: cuisineData[cuisine].filter(
-          (dish) =>
-            dish.alt.toLowerCase().includes(searchQuery.toLowerCase()) || // Match dish name
-            cuisine.toLowerCase().includes(searchQuery.toLowerCase()) // Match cuisine type
-        ),
-      };
-    });
-    setFilteredCuisineData(filteredData);
-  }, [searchQuery]);
+      // If searchQuery matches the cuisine name, return the entire cuisine and its dishes
+      if (cuisine.toLowerCase().includes(searchQuery.toLowerCase())) {
+        return {
+          cuisine,
+          dishes: cuisineData[cuisine], // All dishes in the matched cuisine
+        };
+      }
 
-  // Toggle favorite status of a dish
+      // Filter dishes within the cuisine by name if searchQuery matches any dish name
+      const dishes = cuisineData[cuisine].filter(
+        (dish) => dish.alt.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+
+      if (dishes.length > 0) {
+        return {
+          cuisine,
+          dishes, // Only return matched dishes
+        };
+      }
+
+      return null; // Return null if no match found
+    }).filter(Boolean); // Filter out null results if no match found for a cuisine
+
+    setFilteredCuisineData(filteredData); // Update the filtered cuisine data
+  }, [searchQuery]); // Re-run filtering when searchQuery changes
+
+  // Toggle a dish's favorite status
   const toggleFavorite = (id) => {
     let updatedFavorites;
     if (favorites.includes(id)) {
@@ -219,7 +234,7 @@ const Carousel = () => {
     } else {
       updatedFavorites = [...favorites, id]; // Add to favorites
     }
-    setFavorites(updatedFavorites);
+    setFavorites(updatedFavorites); // Update state
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites)); // Save to local storage
   };
 
@@ -230,62 +245,59 @@ const Carousel = () => {
         <div className={styles.searchSection}>
           <input
             type="text"
-            placeholder="Search for a dish or cuisine..." // Search bar placeholder text
+            placeholder="Search for a dish or cuisine..." // Search input placeholder
             className={styles.searchInput}
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)} // Update search query
+            value={searchQuery} // Bind input value to searchQuery state
+            onChange={(e) => setSearchQuery(e.target.value)} // Update searchQuery when user types
           />
         </div>
-        <Link href="/favpage"> {/* Link to favorites page */}
+        <Link href="/favpage">
           <button className={styles.viewFavoritesButton}>
             View Favorites ({favorites.length}) {/* Show count of favorites */}
           </button>
         </Link>
       </div>
 
-      {/* Display a message if no results are found */}
-      {filteredCuisineData.every((item) => item.dishes.length === 0) && searchQuery.length > 0 ? (
+      {/* Show a "no results" message if no dishes are found */}
+      {filteredCuisineData.length === 0 && searchQuery.length > 0 ? (
         <div className={styles.noResults}>
           <p>Search not found!</p>
         </div>
       ) : (
-        // Map through cuisines and display matching dishes
-        filteredCuisineData.length > 0 &&
+        // Loop through filteredCuisineData and display each cuisine section
         filteredCuisineData.map(({ cuisine, dishes }) => (
           <div key={cuisine} className={styles.cuisineSection}>
             <h2 className={styles.cuisineTitle}>{cuisine} Cuisine</h2>
+            {/* Swiper component for displaying dishes as a carousel */}
             <Swiper
-              modules={[Navigation, Pagination, Autoplay]} // Enable Swiper functionalities
+              modules={[Navigation, Pagination, Autoplay]} // Enable navigation, pagination, and autoplay features
               navigation
-              pagination={{ clickable: true }}
+              pagination={{ clickable: true }} // Make pagination clickable
               autoplay={{ delay: 3000 }} // Auto-slide every 3 seconds
               spaceBetween={20}
-              slidesPerView={1}
-              loop={true} // Enable looping
+              slidesPerView={1} // Show one dish at a time
+              loop={true} // Enable looping of slides
               className={styles.swiper}
             >
+              {/* Display each dish in a Swiper slide */}
               {dishes.map((dish) => (
                 <SwiperSlide key={dish.id}>
                   <div className={styles.slide}>
-                    {/* Dish image */}
-                    <img src={dish.src} alt={dish.alt} className={styles.image} />
-                    {/* Dish name and description */}
-                    <p className={styles.caption}>{dish.alt}</p>
-                    <p className={styles.description}>{dish.description}</p>
-                    {/* Dish rating */}
+                    <img src={dish.src} alt={dish.alt} className={styles.image} /> {/* Dish image */}
+                    <p className={styles.caption}>{dish.alt}</p> {/* Dish name */}
+                    <p className={styles.description}>{dish.description}</p> {/* Dish description */}
                     <p className={styles.rating}>
-                      Rating: {dish.rating.stars} ⭐ ({dish.rating.reviews} reviews)
+                      Rating: {dish.rating.stars} ⭐ ({dish.rating.reviews} reviews) {/* Dish rating */}
                     </p>
-                    {/* Dish location */}
                     <p className={styles.location}>
-                      Location: {dish.location.name} <br />{dish.location.address}
+                      Location: {dish.location.name} <br />{dish.location.address} {/* Location details */}
                     </p>
-                    {/* Favorite toggle button */}
+                    {/* Favorite icon to toggle dish favorite status */}
                     <div
                       className={styles.favoriteIcon}
                       onClick={() => toggleFavorite(dish.id)}
                     >
-                      {favorites.includes(dish.id) ? "★" : "☆"} {/* Star icon */}
+                      {favorites.includes(dish.id) ? "★" : "☆"} {/* Display filled star if favorite, empty otherwise */}
                     </div>
                   </div>
                 </SwiperSlide>
@@ -298,11 +310,11 @@ const Carousel = () => {
       {/* Back to Home button */}
       <div className={styles.buttonGroup}>
         <Link href="/">
-          <button className={styles.backToHomeButton}>Back to Home</button>
+          <button className={styles.backToHomeButton}>Back to Home</button> {/* Navigate back to the home page */}
         </Link>
       </div>
     </div>
   );
 };
 
-export default Carousel; // Export Carousel component
+export default Carousel; // Export the Carousel component
