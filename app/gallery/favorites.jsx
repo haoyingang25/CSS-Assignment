@@ -1,15 +1,6 @@
-//ANG HAO YING 
-
-import React, { useState, useRef, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import Link from "next/link";
+import React, { useState, useEffect } from "react";
 import styles from "../style/styleGallery.module.css";
-
-// Categorized dishes with locations
+import Favorites from "app/gallery/favorites"
 const cuisineData = {
   Chinese: [
     { 
@@ -170,104 +161,46 @@ const cuisineData = {
   ],
 };
 
-const Carousel = () => {
+const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [filteredCuisineData, setFilteredCuisineData] = useState([]);
 
   useEffect(() => {
-    const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    setFavorites(storedFavorites);
+    try {
+      const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      setFavorites(storedFavorites);
+    } catch (error) {
+      console.error("Error loading favorites from localStorage:", error);
+    }
   }, []);
 
-  useEffect(() => {
-    const filteredData = Object.keys(cuisineData).map(cuisine => {
-      return {
-        cuisine,
-        dishes: cuisineData[cuisine].filter(dish =>
-          dish.alt.toLowerCase().includes(searchQuery.toLowerCase()) || 
-          cuisine.toLowerCase().includes(searchQuery.toLowerCase())
-        ),
-      };
-    });
-    setFilteredCuisineData(filteredData);
-  }, [searchQuery]);
-
-  const toggleFavorite = (id) => {
-    let updatedFavorites;
-    if (favorites.includes(id)) {
-      updatedFavorites = favorites.filter((favId) => favId !== id);
-    } else {
-      updatedFavorites = [...favorites, id];
-    }
+  const removeFavorite = (id) => {
+    const updatedFavorites = favorites.filter((favId) => favId !== id);
     setFavorites(updatedFavorites);
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
   };
 
   return (
-    <div className={styles.carouselContainer}>
-      <div className={styles.topBar}>
-        <div className={styles.searchSection}>
-          <input
-            type="text"
-            placeholder="Search for a dish or cuisine..."
-            className={styles.searchInput}
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-        </div>
-        <Link href="/favpage">
-          <button className={styles.viewFavoritesButton}>
-            View Favorites ({favorites.length}) {/* Show count */}
-          </button>
-        </Link>
-      </div>
-
-      {/* Show "Search not found!" if no dishes match search */}
-      {filteredCuisineData.every((item) => item.dishes.length === 0) && searchQuery.length > 0 ? (
-        <div className={styles.noResults}>
-          <p>Search not found!</p>
-        </div>
+    <div className={styles.favoritesContainer}>
+      <h2>Your Favorite Dishes</h2>
+      {favorites.length === 0 ? (
+        <p>No favorites yet!</p>
       ) : (
-        filteredCuisineData.length > 0 &&
-        filteredCuisineData.map(({ cuisine, dishes }) => (
-          <div key={cuisine} className={styles.cuisineSection}>
-            <h2 className={styles.cuisineTitle}>{cuisine} Cuisine</h2>
-            <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
-              navigation
-              pagination={{ clickable: true }}
-              autoplay={{ delay: 3000 }}
-              spaceBetween={20}
-              slidesPerView={1}
-              loop={true}
-              className={styles.swiper}
-            >
-              {dishes.map((dish) => (
-                <SwiperSlide key={dish.id}>
-                  <div className={styles.slide}>
-                    <img src={dish.src} alt={dish.alt} className={styles.image} />
-                    <p className={styles.caption}>{dish.alt}</p>
-                    <p className={styles.description}>{dish.description}</p>
-                    <div className={styles.favoriteIcon} onClick={() => toggleFavorite(dish.id)}>
-                      {favorites.includes(dish.id) ? "★" : "☆"}
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        ))
+        <div className={styles.favoritesGrid}>
+          {favorites.map((id) => {
+            const dish = Object.values(cuisineData).flat().find(dish => dish.id === id);
+            return dish ? (
+              <div key={dish.id} className={styles.favoriteItem}>
+                <img src={dish.src} alt={dish.alt} className={styles.favoriteImage} />
+                <p>{dish.alt}</p>
+                <p>{dish.description}</p>
+                <button onClick={() => removeFavorite(dish.id)} className={styles.clearFavoriteButton}>Remove</button>
+              </div>
+            ) : null;
+          })}
+        </div>
       )}
-
-      {/* Back to Home button */}
-      <div className={styles.buttonGroup}>
-        <Link href="/">
-          <button className={styles.backToHomeButton}>Back to Home</button>
-        </Link>
-      </div>
     </div>
   );
 };
 
-export default Carousel;
+export default Favorites;
