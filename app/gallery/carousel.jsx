@@ -218,7 +218,7 @@ const Carousel = () => {
         </div>
         <Link href="/favpage">
           <button className={styles.viewFavoritesButton}>
-            View Favorites ({favorites.length}) {/* Show count */}
+            View Favorites ({favorites.length})
           </button>
         </Link>
       </div>
@@ -249,6 +249,12 @@ const Carousel = () => {
                     <img src={dish.src} alt={dish.alt} className={styles.image} />
                     <p className={styles.caption}>{dish.alt}</p>
                     <p className={styles.description}>{dish.description}</p>
+                    <p className={styles.rating}>
+                      Rating: {dish.rating.stars} ⭐ ({dish.rating.reviews} reviews)
+                    </p>
+                    <p className={styles.location}>
+                      Location: {dish.location.name} <br />{dish.location.address}
+                    </p>
                     <div className={styles.favoriteIcon} onClick={() => toggleFavorite(dish.id)}>
                       {favorites.includes(dish.id) ? "★" : "☆"}
                     </div>
