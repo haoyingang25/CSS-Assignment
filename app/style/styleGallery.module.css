@@ -1,3 +1,4 @@
+/*ANG HAO YING*/
 /* Overall carousel container */
 .carouselContainer {
   position: relative;
@@ -321,3 +322,29 @@
   outline: none; /* Remove focus outline */
   box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.5); /* Add focus outline */
 }
+
+
+.backToMainPageButton {
+  background-color: #4caf50; /* A green color for the button */
+  color: white; /* White text */
+  padding: 10px 20px; /* Add padding for a comfortable size */
+  font-size: 16px; /* Set font size */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor for hover effect */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.backToMainPageButton:hover {
+  background-color: #45a049; /* Darker green for hover */
+}
+
+.backToMainPageButton:active {
+  background-color: #3e8e41; /* Even darker green for active state */
+}
+
+.backToMainPageButton:focus {
+  outline: 2px solid #4caf50; /* Add focus outline for accessibility */
+  outline-offset: 2px;
+}
+
