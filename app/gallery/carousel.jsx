@@ -176,7 +176,7 @@ const cuisineData = {
     { 
       id: 17, 
       src: "/pancakes.jpeg", 
-      alt: "Japanese Pancakes", 
+      alt: "Japanese Pancake", 
       description: "Soft and Fluffy, topped with sweet fruits.",
       location: { name: "Pancake", address: "8 Vivo City, Singapore" },
       rating: { stars: 4.5, reviews: 1209 },
