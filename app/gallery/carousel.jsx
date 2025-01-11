@@ -1,15 +1,30 @@
 //ANG HAO YING 
 
-import React, { useState, useRef, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
+import React, { useState, useEffect } from "react"; // use React and tools to manage data and actions in the webpage
+import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper components
+import { Navigation, Pagination, Autoplay } from "swiper/modules"; // Import Swiper functionalities
+
+// Import Swiper styles
+import "swiper/css"; 
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Link from "next/link";
-import styles from "../style/styleGallery.module.css";
 
-// Categorized dishes with locations
+import Link from "next/link"; // Import Next.js Link for navigation
+import styles from "../style/styleGallery.module.css"; // Import CSS module for styling
+
+// Categorized dishes with different categories
+
+//chinese = Chinese cuisine category
+//italian = Italian cuisine category
+//korean = Korean cuisine category
+// Japanese cuisine category
+
+// id =  Unique identifier for the dish
+// src =  Path to the image of the dish
+// alt = Alternative text for the image
+// description = describe how the food taste and apperance
+// location = Location details for the dish
+// rating =  Ratings and reviews for the dish
 const cuisineData = {
   Chinese: [
     { 
@@ -171,92 +186,106 @@ const cuisineData = {
 };
 
 const Carousel = () => {
-  const [favorites, setFavorites] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [filteredCuisineData, setFilteredCuisineData] = useState([]);
+  const [favorites, setFavorites] = useState([]); // State for favorite dishes
+  const [searchQuery, setSearchQuery] = useState(""); // State for search query
+  const [filteredCuisineData, setFilteredCuisineData] = useState([]); // State for filtered cuisine data
 
+  // Load favorite dishes from local storage on initial render
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     setFavorites(storedFavorites);
   }, []);
 
+  // Filter cuisine data based on the search query
   useEffect(() => {
-    const filteredData = Object.keys(cuisineData).map(cuisine => {
+    const filteredData = Object.keys(cuisineData).map((cuisine) => {
       return {
         cuisine,
-        dishes: cuisineData[cuisine].filter(dish =>
-          dish.alt.toLowerCase().includes(searchQuery.toLowerCase()) || 
-          cuisine.toLowerCase().includes(searchQuery.toLowerCase())
+        dishes: cuisineData[cuisine].filter(
+          (dish) =>
+            dish.alt.toLowerCase().includes(searchQuery.toLowerCase()) || // Match dish name
+            cuisine.toLowerCase().includes(searchQuery.toLowerCase()) // Match cuisine type
         ),
       };
     });
     setFilteredCuisineData(filteredData);
   }, [searchQuery]);
 
+  // Toggle favorite status of a dish
   const toggleFavorite = (id) => {
     let updatedFavorites;
     if (favorites.includes(id)) {
-      updatedFavorites = favorites.filter((favId) => favId !== id);
+      updatedFavorites = favorites.filter((favId) => favId !== id); // Remove from favorites
     } else {
-      updatedFavorites = [...favorites, id];
+      updatedFavorites = [...favorites, id]; // Add to favorites
     }
     setFavorites(updatedFavorites);
-    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites)); // Save to local storage
   };
 
   return (
     <div className={styles.carouselContainer}>
+      {/* Search bar and view favorites button */}
       <div className={styles.topBar}>
         <div className={styles.searchSection}>
           <input
             type="text"
-            placeholder="Search for a dish or cuisine..."
+            placeholder="Search for a dish or cuisine..." // Search bar placeholder text
             className={styles.searchInput}
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => setSearchQuery(e.target.value)} // Update search query
           />
         </div>
-        <Link href="/favpage">
+        <Link href="/favpage"> {/* Link to favorites page */}
           <button className={styles.viewFavoritesButton}>
-            View Favorites ({favorites.length})
+            View Favorites ({favorites.length}) {/* Show count of favorites */}
           </button>
         </Link>
       </div>
 
-      {/* Show "Search not found!" if no dishes match search */}
+      {/* Display a message if no results are found */}
       {filteredCuisineData.every((item) => item.dishes.length === 0) && searchQuery.length > 0 ? (
         <div className={styles.noResults}>
           <p>Search not found!</p>
         </div>
       ) : (
+        // Map through cuisines and display matching dishes
         filteredCuisineData.length > 0 &&
         filteredCuisineData.map(({ cuisine, dishes }) => (
           <div key={cuisine} className={styles.cuisineSection}>
             <h2 className={styles.cuisineTitle}>{cuisine} Cuisine</h2>
             <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
+              modules={[Navigation, Pagination, Autoplay]} // Enable Swiper functionalities
               navigation
               pagination={{ clickable: true }}
-              autoplay={{ delay: 3000 }}
+              autoplay={{ delay: 3000 }} // Auto-slide every 3 seconds
               spaceBetween={20}
               slidesPerView={1}
-              loop={true}
+              loop={true} // Enable looping
               className={styles.swiper}
             >
               {dishes.map((dish) => (
                 <SwiperSlide key={dish.id}>
                   <div className={styles.slide}>
+                    {/* Dish image */}
                     <img src={dish.src} alt={dish.alt} className={styles.image} />
+                    {/* Dish name and description */}
                     <p className={styles.caption}>{dish.alt}</p>
                     <p className={styles.description}>{dish.description}</p>
+                    {/* Dish rating */}
                     <p className={styles.rating}>
                       Rating: {dish.rating.stars} ⭐ ({dish.rating.reviews} reviews)
                     </p>
+                    {/* Dish location */}
                     <p className={styles.location}>
                       Location: {dish.location.name} <br />{dish.location.address}
                     </p>
-                    <div className={styles.favoriteIcon} onClick={() => toggleFavorite(dish.id)}>
-                      {favorites.includes(dish.id) ? "★" : "☆"}
+                    {/* Favorite toggle button */}
+                    <div
+                      className={styles.favoriteIcon}
+                      onClick={() => toggleFavorite(dish.id)}
+                    >
+                      {favorites.includes(dish.id) ? "★" : "☆"} {/* Star icon */}
                     </div>
                   </div>
                 </SwiperSlide>
@@ -276,4 +305,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default Carousel; // Export Carousel component
