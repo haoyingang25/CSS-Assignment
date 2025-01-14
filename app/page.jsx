@@ -16,9 +16,7 @@ const HomePage = () => {
         <Link href="/history">
           <h2 className={styles.subheader}>History</h2>
         </Link>
-        <Link href="/location">
-          <h2 className={styles.subheader}>Location</h2>
-        </Link>
+        
       </div>
 
       {/* Logo at the top left */}
