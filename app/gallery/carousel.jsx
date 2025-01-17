@@ -1,4 +1,4 @@
-//ANG HAO YING 
+//ANG HAO YING S10270430
 
 import React, { useState, useEffect } from "react"; // use React and tools to manage data and actions in the webpage
 import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper components
