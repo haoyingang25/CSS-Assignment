@@ -1,4 +1,14 @@
 //ANG HAO YING S10270430
+//overview:
+//this page is used for displaying images, allowing the images to swipe by importing the swiper library
+//it allows users to add to favorites. this page also provides a button which will link them to a new page to view their favorites
+//user can select on the star icon to view their favorite 
+
+//This webpage will be categorized dishes with different categories:
+//chinese = Chinese cuisine category
+//italian = Italian cuisine category
+//korean = Korean cuisine category
+// Japanese cuisine category
 
 import React, { useState, useEffect } from "react"; // use React and tools to manage data and actions in the webpage
 import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper components
@@ -12,12 +22,6 @@ import "swiper/css/pagination";
 import Link from "next/link"; // Import Next.js Link for navigation
 import styles from "../style/styleGallery.module.css"; // Import CSS module for styling
 
-// Categorized dishes with different categories
-
-//chinese = Chinese cuisine category
-//italian = Italian cuisine category
-//korean = Korean cuisine category
-// Japanese cuisine category
 
 // id =  Unique identifier for the dish
 // src =  Path to the image of the dish
@@ -49,7 +53,7 @@ const cuisineData = {
       id: 3, 
       src: "/carrotcake.jpg", 
       alt: "Carrot Cake", 
-      description: "Sweet and Savoury.",
+      description: "Sweet, Soft, Savoury.",
       location: { name: "Lau Pa Sat", address: "23 Raffles Rd, Singapore" },
       rating: { stars: 4.5, reviews: 1222 },
     },
@@ -58,7 +62,7 @@ const cuisineData = {
       id: 4, 
       src: "/dimsum.jpg", 
       alt: "Dim Sum", 
-      description: "Be spoilt for choices.",
+      description: "Be spoilt for the wide variety of choices.",
       location: { name: "Crystal Jade", address: "90 ChinaTown Rd, Singapore" },
       rating: { stars: 4.5, reviews: 2000 },
     },
@@ -67,7 +71,7 @@ const cuisineData = {
       id: 5, 
       src: "/popiah.JPG", 
       alt: "Popiah", 
-      description: "Crunchy and Savoury.",
+      description: "Traditional chinese snack.",
       location: { name: "Clementi Food Court", address: "12 Clementi Rd, Singapore" },
       rating: { stars: 4.5, reviews: 100 },
     }
@@ -78,7 +82,7 @@ const cuisineData = {
       id: 6, 
       src: "/lasanga.png", 
       alt: "lasanga", 
-      description: "Layers of Beef.",
+      description: "Enjoy it layer by layer. Flavourful.",
       location: { name: "Chill Cafe", address: "33 Marina Bay Dr, Singapore" },
       rating: { stars: 4.5, reviews: 1000 },
     },
@@ -86,7 +90,7 @@ const cuisineData = {
       id: 7, 
       src: "/pizza.jpg", 
       alt: "Pizza", 
-      description: "Crispy and golden crust and cheese pull.",
+      description: "Thin and crispy golden crust and it comes with cheese pull.",
       location: { name: "Pizza Heaven", address: "159 City Square, Singapore" },
       rating: { stars: 4.5, reviews: 1201 },
     },
@@ -104,7 +108,7 @@ const cuisineData = {
       id: 9, 
       src: "/Tiramisu.jpg", 
       alt: "Tiramisu Cake", 
-      description: "Coffee lover?",
+      description: "Suitable for coffee lovers. Alcohol-free!",
       location: { name: "Dessert Palace", address: "99 City Square, Singapore" },
       rating: { stars: 4.5, reviews: 1250 },
     },
@@ -115,7 +119,7 @@ const cuisineData = {
       id: 10, 
       src: "/bibimbap.jpg", 
       alt: "Bibimbap", 
-      description: "A bowl of rice which is good for your health.",
+      description: "Hearty bowl of rice.",
       location: { name: "Korean", address: "66 Tanjong Pagar Rd, Singapore" },
       rating: { stars: 4.5, reviews: 1206 },
     },
@@ -142,7 +146,7 @@ const cuisineData = {
       id: 13, 
       src: "/japanese food.jpg", 
       alt: "Sushi", 
-      description: "Fresh sushi rolls with seafood and vegetables.",
+      description: "Freshly made sushi.",
       location: { name: "Sushi", address: "66 Clarke Quay, Singapore" },
       rating: { stars: 4.5, reviews: 1290 },
     },
@@ -150,7 +154,7 @@ const cuisineData = {
       id: 14, 
       src: "/ramen.jpg", 
       alt: "Ramen", 
-      description: "Japanese noodle soup with broth, meat, and egg.",
+      description: "Slup Slup Slup. Enjoy the soup and noodles together",
       location: { name: "Ramen", address: "7 Orchard Gateway, Singapore" },
       rating: { stars: 4.5, reviews: 3000 },
     },
@@ -177,7 +181,7 @@ const cuisineData = {
       id: 17, 
       src: "/pancakes.jpeg", 
       alt: "Japanese Pancake", 
-      description: "Soft and Fluffy, topped with sweet fruits.",
+      description: "Soft and Fluffy, topped with sweet fruits and cream.",
       location: { name: "Pancake", address: "8 Vivo City, Singapore" },
       rating: { stars: 4.5, reviews: 1209 },
     }
