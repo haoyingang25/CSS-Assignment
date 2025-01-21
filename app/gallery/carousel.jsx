@@ -9,7 +9,7 @@
 //italian = Italian cuisine category
 //korean = Korean cuisine category
 // Japanese cuisine category
-//iiiii
+
 
 import React, { useState, useEffect } from "react"; // use React and tools to manage data and actions in the webpage
 import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper components
