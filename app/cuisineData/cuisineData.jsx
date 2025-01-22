@@ -1,4 +1,4 @@
-//ANG HAO YING
+//ANG HAO YING S10270430
 //what it does:
 // Data structure holding details of various cuisines and their dishes
 // this is to show what the users have added into their favorites, except the description as it is not really important. if they were to use it to find locations
