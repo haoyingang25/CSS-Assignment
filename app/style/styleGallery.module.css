@@ -346,5 +346,4 @@
 .backToMainPageButton:focus {
   outline: 2px solid #4caf50; /* Add focus outline for accessibility */
   outline-offset: 2px;
-}
-
+} 
