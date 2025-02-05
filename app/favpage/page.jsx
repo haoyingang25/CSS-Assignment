@@ -5,7 +5,6 @@ import { cuisineData } from '../cuisineData/cuisineData'; // Ensure the path to 
 import styles from '../style/styleGallery.module.css'; // Import CSS module for styling
 import Link from 'next/link'; // Import Link component for navigation
 
-
 const FavPage = () => {
   const [favorites, setFavorites] = useState([]);
 
@@ -28,8 +27,8 @@ const FavPage = () => {
     localStorage.setItem('favorites', JSON.stringify([])); // Clear the favorites list in localStorage
   };
 
-  // Show a loading message if the cuisine data is not available
-  if (!cuisineData) {
+  // Show a loading message if the cuisine data is not available or if it's empty
+  if (!cuisineData || Object.keys(cuisineData).length === 0) {
     return <p>Loading...</p>;
   }
 
@@ -45,7 +44,7 @@ const FavPage = () => {
             <div className={styles.favoritesGrid}>
               {/* Map through the favorite dish IDs to display their details */}
               {favorites.map((dishId) => {
-                // Find the dish details from the cuisineData based on the dish ID
+                // Safely find the dish details from cuisineData based on the dish ID
                 const dish = Object.keys(cuisineData)
                   .flatMap((cuisine) => cuisineData[cuisine] || [])
                   .find((item) => item.id === dishId);
