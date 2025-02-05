@@ -98,9 +98,9 @@ export const cuisineData = {
     },
     {
       id: 11,
-      src: "/kimchistew.jpg",
-      alt: "Kimchi Stew",
-      location: { name: "Stew waiting", address: "10 Clake Quay Rd, Singapore" },
+      src: "/tteokbooki.jpg",
+      alt: "Korean Rice Cake",
+      location: { name: "Rice Cake", address: "10 Clake Quay Rd, Singapore" },
       rating: { stars: 4.5, reviews: 1270 },
     },
     {
