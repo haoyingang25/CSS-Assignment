@@ -126,10 +126,10 @@ const cuisineData = {
     },
     { 
       id: 11, 
-      src: "/kimchistew.jpg", 
-      alt: "Kimchi Stew", 
-      description: "Spicy.",
-      location: { name: "Stew waiting", address: "10 Clake Quay Rd, Singapore" },
+      src: "/tteokbooki.jpg", 
+      alt: "Korean Rice Cake", 
+      description: "Slightly Spicy and Chewy.",
+      location: { name: "Rice Cake", address: "10 Clake Quay Rd, Singapore" },
       rating: { stars: 4.5, reviews: 1270 },
     },
 
