@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   padding: 40px 30px 200px 30px; /* Spacious padding */
-  background-color: #fff; /* Crisp white background */
+  background-color: #F8F5F2; /* Crisp white background */
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1); /* Elegant shadow */
   border-radius: 20px; /* Soft rounded corners */
   margin-bottom: 50px;
@@ -12,6 +12,7 @@
   max-width: 1200px;
   margin: 0 auto; /* Center the container */
 }
+
 
 /* Swiper container (carousel) */
 .swiper {
@@ -25,6 +26,7 @@
   text-align: center;
   padding: 20px; /* Reduced padding */
   background-color: #fafafa;
+  /*background-color:#FFF9E6;*/
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -61,8 +63,8 @@
 .favoritesSection {
   margin-top: 40px;
   padding: 25px; /* Increased padding for spacing */
-  background-color: #f9f9f9;
   border-radius: 15px;
+  background-color: #ffffff;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -347,3 +349,33 @@
   outline: 2px solid #4caf50; /* Add focus outline for accessibility */
   outline-offset: 2px;
 } 
+
+
+
+/*footer*/
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f1f1f1;
+  margin-top: 40px;
+}
+
+.footerLeft, .footerRight {
+  width: 48%;
+}
+
+.footerSection {
+  margin-bottom: 20px;
+}
+
+.footerTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footerContent {
+  font-size: 14px;
+  margin-bottom: 5px;
+}

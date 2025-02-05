@@ -5,53 +5,59 @@
 import React from "react";
 import Carousel from "../gallery/carousel"; // Correct relative path
 
+
 const CuisinePage = () => {
   return (
     <div
       style={{
         minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "#FAF9F6", // Soft beige for warmth
+        backgroundColor: "#DED3C2", // Soft Ivory for an elegant base
         padding: "40px 20px",
       }}
     >
-      <div
+      <h1
         style={{
-          width: "80%",
-          maxWidth: "1000px",
-          backgroundColor:"#FAF9F6",
-          padding: "30px",
-          borderRadius: "12px",
-          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Soft shadow
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          textAlign: "center",
+          marginBottom: "20px",
+          color: "#3E2723", // Deep Espresso for sophistication
+          fontFamily: "'Playfair Display', serif",
+          fontWeight: "bold",
         }}
       >
-        <h1
-          style={{
-            textAlign: "center",
-            marginBottom: "20px",
-            color: "#8B4513", // Warm brown
-            fontFamily: "'Lora', serif",
-            fontWeight: "bold",
-          }}
-        >
-          Visit the Top Rated Cuisines!
-        </h1>
-        <Carousel />
-      </div>
+        Visit the Top Rated Cuisines!
+      </h1>
+
+      <p
+        style={{
+          textAlign: "center",
+          maxWidth: "800px",
+          fontSize: "18px",
+          color: "#4A4A4A", // Charcoal Gray for readability
+          lineHeight: "1.6",
+          margin: "0 auto 20px",
+        }}
+      >
+        Explore a world of flavors, from traditional delicacies to modern fusion dishes.
+        Each cuisine offers a unique experience, curated by top chefs and loved by food enthusiasts.
+      </p>
+
+      <p
+        style={{
+          textAlign: "center",
+          fontSize: "16px",
+          fontWeight: "bold",
+          color: "#222222", // Warm Gold for elegance
+          marginBottom: "20px",
+        }}
+      >
+        Swipe through to discover the best cuisines and add your favorites!
+      </p>
+
+      {/* Carousel Component */}
+      <Carousel />
     </div>
   );
 };
 
-
-// Export the component as default for use in the app
 export default CuisinePage;
-
-
-
 
