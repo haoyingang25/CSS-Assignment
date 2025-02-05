@@ -22,7 +22,6 @@ const CuisinePage = () => {
         style={{
           width: "80%",
           maxWidth: "1000px",
-          //backgroundColor: "#FFFFFF", // White content container
           backgroundColor:"#FAF9F6",
           padding: "30px",
           borderRadius: "12px",
