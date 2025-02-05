@@ -1,10 +1,10 @@
-//ANG HAO YING S10270430
 'use client';
 
 import React, { useState, useEffect } from 'react';
 import { cuisineData } from '../cuisineData/cuisineData'; // Ensure the path to the data is correct
 import styles from '../style/styleGallery.module.css'; // Import CSS module for styling
 import Link from 'next/link'; // Import Link component for navigation
+
 
 const FavPage = () => {
   const [favorites, setFavorites] = useState([]);
@@ -17,7 +17,6 @@ const FavPage = () => {
 
   // Function to remove a specific dish from the favorites list
   const removeFavorite = (dishId) => {
-    // Filter out the dish with the given ID from the favorites list
     const updatedFavorites = favorites.filter((id) => id !== dishId);
     setFavorites(updatedFavorites); // Update the state with the new list
     localStorage.setItem('favorites', JSON.stringify(updatedFavorites)); // Update localStorage

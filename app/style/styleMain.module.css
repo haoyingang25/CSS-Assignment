@@ -1,39 +1,45 @@
-/*making the page nice and interactive*/
 /* Main Page Container */
 .mainPage {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #f9f9f9;
+  justify-content: flex-start; /* Align items from the top */
+  min-height: 100vh; /* Ensure the content fills the viewport */
+  background-color: #F8F5F2;
   font-family: "Lora", serif;
   padding: 40px;
+  overflow-y: auto; /* Allow vertical scrolling */
+  position: relative; /* Make sure the content doesn't overlap with the footer */
+  margin-top: 0px; 
+  padding-bottom: 120px; 
 }
 
 /* Subheader Container - Align subheaders at the top horizontally */
 .subheaderContainer {
   display: flex;
-  gap: 20px; 
+  gap: 20px;
   align-items: center;
   justify-content: center;
-  position: absolute; 
-  top: 70px; 
+  margin-top: 40px; /* Adjusted to give space at the top */
   width: 100%;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
 }
 
-/* Subheader Styling - Make font smaller */
+/* Subheader Styling */
 .subheader {
-  font-size: 18px; 
+  font-size: 18px;
   font-weight: bold;
   color: #2c3e50;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 /* Hover Effect for Subheaders */
 .subheader:hover {
   color: #bfa15f;
+  transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
 /* Logo Container - Align logo with the subheaders */
@@ -48,13 +54,19 @@
 .logo {
   width: 150px;  
   height: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Logo Hover Effect */
+.logo:hover {
+  transform: rotate(15deg); /* Slight rotation for interactivity */
 }
 
 /* Main title */
 .title {
   font-size: 36px;
   font-weight: bold;
-  margin-top: -40px; 
+  margin-top: 100px; 
   color: #2c3e50;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
@@ -62,8 +74,11 @@
 /* Tab Navigation Container */
 .tabsContainer {
   display: flex;
-  gap: 30px;
-  margin-top: 10px; 
+  justify-content: center; /* Align tabs horizontally */
+  gap: 30px; /* Space between tabs */
+  margin-top: 40px; /* Add space before tabs */
+  width: 100%; /* Ensure the container spans the entire width */
+  align-items: center;
 }
 
 /* Individual Tab Button */
@@ -80,23 +95,26 @@
   transition: all 0.3s ease;
 }
 
+/* Hover Effect for Tab Buttons */
 .tab:hover {
   background-color: #e67e22;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
 /* Footer Section */
 .footer {
-  position: absolute; 
-  bottom: 0; 
-  width: 100%; 
+  width: 100%;
   padding: 40px;
   background-color: #2c3e50;
   color: #fff;
   font-size: 14px;
   display: grid;
-  grid-template-columns: 1fr 1fr; 
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
+  position: relative; /* Adjust positioning */
+  bottom: 0; /* Keep it at the bottom */
+  margin-top: 20px;
 }
 
 /* Footer Section Title */
@@ -126,6 +144,43 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+/* Image Container - Ensure the images are displayed side by side */
+.imageContainer {
+  display: flex; /* Use flexbox for side-by-side layout */
+  justify-content: center; /* Align images to the left */
+  gap: 30px; /* Increased space between images */
+  margin-top: 40px; /* Space above images */
+  text-align: center; /* Center-align text inside image wrapper */
+  width: 100%; /* Make sure images take up the full width */
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Image Wrapper - Ensure the wrapper allows for smooth interaction */
+.imageWrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 10px;
+  width: 300px; /* Set image width */
+  height: 300px; /* Set image height */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Image inside the wrapper */
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image fills the wrapper */
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+/* Hover effect on image */
+.imageWrapper:hover img {
+  transform: scale(1.1); /* Zoom in the image on hover */
 }
 
 /* Media Queries */
@@ -165,8 +220,6 @@
     padding: 20px;
     grid-template-columns: 1fr; 
     gap: 20px;
-    position: relative;
-    bottom: 0;
   }
 
   .footerTitle {
