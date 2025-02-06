@@ -1,3 +1,4 @@
+//ANG HAO YING S10270430
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -107,32 +108,35 @@ const FavPage = () => {
         </Link>
       </div>
 
-       {/* Footer */}
-  <div className={styles.footer}>
-    <div className={styles.footerLeft}>
-      <div className={styles.footerSection}>
-        <h3 className={styles.footerTitle}>About</h3>
-        <p className={styles.footerContent}>Sharing the best food in Singapore!</p>
-      </div>
-      <div className={styles.footerSection}>
-        <h3 className={styles.footerTitle}>Contact</h3>
-        <p className={styles.footerContent}>Email: contact@foodBlog.com</p>
-      </div>
-    </div>
+       {/* Footer Section */}
+      <div className={styles.footer}>
+        
+        {/* Left side of the footer */}
+        <div className={styles.footerLeft}>
+          <div className={styles.footerSection}>
+            <h3 className={styles.footerTitle}>About</h3> {/* Title for 'About' section */}
+            <p className={styles.footerContent}>Sharing the best food experiences from around the world.</p> {/* Content under 'About' section */}
+          </div>
+          <div className={styles.footerSection}>
+            <h3 className={styles.footerTitle}>Contact</h3> {/* Title for 'Contact' section */}
+            <p className={styles.footerContent}>Email: contact@foodblog.com</p> {/* Content for email */}
+            <p className={styles.footerContent}>Follow us on social media for the latest updates!</p> {/* Social media content */}
+          </div>
+        </div>
 
-    <div className={styles.footerRight}>
-      <div className={styles.footerSection}>
-        <h3 className={styles.footerTitle}>Follow Us!</h3>
-        <p className={styles.footerContent}>Instagram | Facebook | Twitter</p>
+        {/* Right side of the footer */}
+        <div className={styles.footerRight}>
+          <div className={styles.footerSection}>
+            <h3 className={styles.footerTitle}>Follow Us</h3> {/* Title for 'Follow Us' section */}
+            <p className={styles.footerContent}>Instagram | Facebook | Twitter</p> {/* Social media platforms */}
+          </div>
+          <div className={styles.footerSection}>
+            <h3 className={styles.footerTitle}>Newsletter</h3> {/* Title for 'Newsletter' section */}
+            <p className={styles.footerContent}>Stay updated with the latest food news.</p> {/* Newsletter content */}
+            <p className={styles.footerContent}>Sign up for our newsletter!</p> {/* Call to action for the newsletter */}
+          </div>
+        </div>
       </div>
-      <div className={styles.footerSection}>
-        <h3 className={styles.footerTitle}>Newsletter</h3>
-        <p className={styles.footerContent}>Stay updated with the latest recipes and food news.</p>
-        <p className={styles.footerContent}>Sign up for our newsletter!</p>
-      </div>
-    </div>
-  </div>
-      
     </div>
   );
 };

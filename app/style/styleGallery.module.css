@@ -1,3 +1,4 @@
+/*ANG HAO YING S10270430*/
 /* Base Styles (for Desktop) */
 .carouselContainer {
   position: relative;
@@ -15,8 +16,9 @@
 .swiper {
   width: 100%;
   padding-bottom: 80px;
-  position: relative;
+  position: relative; /* Ensures positioning of elements inside is relative to this container */
 }
+
 
 .slide {
   text-align: center;
@@ -24,11 +26,11 @@
   background-color: #fafafa;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adds smooth transition for transformations and box-shadow on hover */
 }
 
 .slide:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Slightly enlarges the slide on hover */
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
@@ -47,7 +49,7 @@
   color: #2c3e50;
   margin-top: 10px;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.5px; /* Adds spacing between the letters */
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
   font-family: 'Montserrat', sans-serif;
 }
@@ -87,12 +89,12 @@
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease; /* Adds smooth transition for transformations on hover */
   margin-bottom: 15px;
 }
 
 .favoriteImage:hover {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Slightly enlarges the image on hover */
 }
 
 .description {
@@ -107,7 +109,7 @@
 
 .swiper .swiper-pagination {
   position: absolute;
-  bottom: -100px;
+  bottom: -100px; /* Moves the pagination 100px below the swiper container */
   z-index: 10;
   display: flex;
   justify-content: center;
@@ -118,8 +120,8 @@
   background-color: #bfa15f;
   width: 12px;
   height: 12px;
-  border-radius: 50%;
-  margin: 0 8px;
+  border-radius: 50%;  /* Makes the bullet round */
+  margin: 0 8px; /* Adds space between the bullets */
   transition: all 0.3s ease;
 }
 
@@ -138,10 +140,10 @@
   color: white;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
   font-family: 'Roboto', sans-serif;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;  /* Adds smooth transition for background color and transform on hover */
+  margin-top: 20px; /* Adds space above the button */
 }
 
 .clearAllFavoritesButton:hover {
@@ -175,9 +177,10 @@
   color: white;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;   /* Changes the cursor to a pointer when hovering over the button */
+  transition: background-color 0.3s ease, transform 0.3s ease;  /* Adds smooth transition for background color and transform on hover */
 }
+
 
 .viewFavoritesButton:hover,
 .clearAllButton:hover {

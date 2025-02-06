@@ -1,5 +1,5 @@
-// //ANG HAO YING S10270430
-// // app/cuisine/page.jsx
+//ANG HAO YING S10270430
+// app/cuisine/page.jsx
 "use client";
 // Import the React library and the Carousel component from the correct relative path
 import React from "react";
