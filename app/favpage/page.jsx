@@ -106,6 +106,33 @@ const FavPage = () => {
           <button className={styles.backToMainPageButton}>Back to Main Page</button>
         </Link>
       </div>
+
+       {/* Footer */}
+  <div className={styles.footer}>
+    <div className={styles.footerLeft}>
+      <div className={styles.footerSection}>
+        <h3 className={styles.footerTitle}>About</h3>
+        <p className={styles.footerContent}>Sharing the best food in Singapore!</p>
+      </div>
+      <div className={styles.footerSection}>
+        <h3 className={styles.footerTitle}>Contact</h3>
+        <p className={styles.footerContent}>Email: contact@foodBlog.com</p>
+      </div>
+    </div>
+
+    <div className={styles.footerRight}>
+      <div className={styles.footerSection}>
+        <h3 className={styles.footerTitle}>Follow Us!</h3>
+        <p className={styles.footerContent}>Instagram | Facebook | Twitter</p>
+      </div>
+      <div className={styles.footerSection}>
+        <h3 className={styles.footerTitle}>Newsletter</h3>
+        <p className={styles.footerContent}>Stay updated with the latest recipes and food news.</p>
+        <p className={styles.footerContent}>Sign up for our newsletter!</p>
+      </div>
+    </div>
+  </div>
+      
     </div>
   );
 };
