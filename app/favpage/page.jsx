@@ -1,4 +1,4 @@
-//ANG HAO YING S10270430
+// //ANG HAO YING S10270430
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -37,7 +37,6 @@ const FavPage = () => {
     <div className={styles.carouselContainer}>
       {/* Page Title */}
       <h1 className={styles.pageTitle}>Your Favorite Dishes</h1>
-      
       <div className={styles.swiper}>
         <div className={styles.favoritesSection}>
           {/* Check if there are any favorite dishes */}
@@ -142,3 +141,4 @@ const FavPage = () => {
 };
 
 export default FavPage;
+
