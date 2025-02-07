@@ -16,7 +16,7 @@ const FavPage = () => {
       document.body.style.backgroundColor = ""; // Reset on unmount
     };
   }, []);
-
+  
   // Load favorite dishes from localStorage when the component mounts
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
