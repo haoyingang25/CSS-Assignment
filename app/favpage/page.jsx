@@ -9,6 +9,14 @@ import Link from 'next/link'; // Import Link component for navigation
 const FavPage = () => {
   const [favorites, setFavorites] = useState([]);
 
+  // Set background color when the component mounts
+  useEffect(() => {
+    document.body.style.backgroundColor = "#DED3C2";
+    return () => {
+      document.body.style.backgroundColor = ""; // Reset on unmount
+    };
+  }, []);
+
   // Load favorite dishes from localStorage when the component mounts
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
