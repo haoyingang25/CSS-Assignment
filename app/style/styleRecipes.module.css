@@ -1,0 +1,233 @@
+/* Ayden Chionh S10266744 */
+/* app/style/styleRecipes.module.css */
+.container {
+    background-color: #DED3C2; /* Changed background color */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.card h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: black; 
+}
+
+.card h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 30px 0 40px; /* Increased bottom margin for more space below header */
+    color: black; 
+}
+
+.ingredientDetailsContainer {
+    margin-bottom: 20px;
+}
+
+.ingredientDetails {
+    margin-bottom: 10px;
+}
+
+.dumplingImage {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.conversionButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 0 40px 0; /* Added more bottom margin for space between buttons and other elements */
+    align-items: center;
+}
+
+.radioContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.conversionButton {
+    background-color: #FFB84D; /* Changed to orangey gold */
+    color: navy; /* Changed text color to navy */
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.conversionButton:hover {
+    background-color: #FF9F00; /* Slightly darker shade */
+}
+
+.activeButton {
+    background-color: #FF9F00;
+    font-weight: bold;
+}
+
+.steps {
+    list-style-type: decimal;
+    padding-left: 24px;
+    text-align: left;
+}
+
+.steps li {
+    margin-bottom: 8px;
+}
+
+.cookingMethodContainer {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.cookingMethod {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.cookingMethod h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.cookingMethod ol {
+    padding-left: 20px;
+}
+
+.cookingMethodContainer::before {
+    content: "";
+    display: block;
+    height: 20px;
+}
+
+.backButton {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.backButton:hover {
+    background-color: #218838;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: #fff;
+    margin-top: 40px;
+    border-radius: 12px;
+}
+
+.footerLeft,
+.footerRight {
+    width: 48%;
+}
+
+.footerSection {
+    margin-bottom: 20px;
+}
+
+.footerTitle {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #bfa15f;
+}
+
+.footerContent {
+    font-size: 14px;
+}
+
+/* Timer styles */
+.timerInputContainer {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.timerInput {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.timerInput:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.timerDisplay {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.timerButton {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.timerButton:hover {
+    background-color: #218838;
+}
+
+.timerButtonReset {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.timerButtonReset:hover {
+    background-color: darkred;
+}
+
+.timerContainer h3 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+

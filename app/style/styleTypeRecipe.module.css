@@ -1,0 +1,138 @@
+/* Ayden Chionh S10266744*/
+/* app/style/styleTypeRecipe.module.css */
+
+.container {
+	background-color: #DED3C2; /* Background color */
+	font-family: Arial, sans-serif;
+	min-height: 100vh;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.title {
+	font-size: 28px;
+	color: navy; /* Title text color */
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.card {
+	background-color: white;
+	border-radius: 12px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+	.card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	}
+
+.imageContainer {
+	position: relative;
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+}
+
+.image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s;
+}
+
+.card:hover .image {
+	transform: scale(1.1);
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.card:hover .overlay {
+	opacity: 1;
+}
+
+.label {
+	font-size: 20px;
+	font-weight: bold;
+	color: navy; /* Label text color */
+	text-align: center;
+	margin: 16px 0;
+}
+
+.buttonContainer {
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+.backToRecipesButton {
+	background-color: #27ae60; /* Green button color */
+	color: white;
+	border: none;
+	border-radius: 8px;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.backToRecipesButton:hover {
+	background-color: #219150; /* Darker green on hover */
+}
+
+.footer {
+	width: 100%; /* Ensure the footer spans the entire width of the page */
+	max-width: 1200px; /* Limit the maximum width for better readability */
+	margin: 40px auto 0 auto; /* Center the footer horizontally */
+	padding: 20px;
+	background-color: #2c3e50;
+	color: #fff;
+	display: flex;
+	justify-content: space-between;
+	gap: 20px; /* Add spacing between columns */
+}
+
+.footerLeft, .footerRight {
+	flex: 1; /* Make both sections flexible and equal in width */
+	min-width: 300px; /* Set a minimum width for better responsiveness */
+}
+
+.footerSection {
+	margin-bottom: 20px;
+}
+
+.footerTitle {
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: #bfa15f;
+}
+
+.footerContent {
+	font-size: 14px;
+	margin-bottom: 5px;
+	line-height: 1.5; /* Improve readability */
+}

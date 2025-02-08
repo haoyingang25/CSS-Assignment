@@ -47,16 +47,17 @@ const HomePage = () => {
         </Link>
         
         {/* Link to 'Recipe' section with an image and description */}
-        <Link href="/calculation">
-          <div className={styles.tabContainerWithShadow}>
-            <div className={styles.tab}>
-              <Image src="/carrotcake.jpg" alt="Recipe" className={styles.tabImage} fill style={{ objectFit: "cover" }} /> {/* Image for the recipe tab */}
-              <div className={styles.overlay}></div> {/* Overlay effect on hover */}
-              <span className={styles.tabText}>Recipe</span> {/* Tab text */}
+        <Link href="recipe">
+            <div className={styles.tabContainerWithShadow}>
+                <div className={styles.tab}>
+                    <Image src="/carrotcake.jpg" alt="Recipe" className={styles.tabImage} fill style={{ objectFit: "cover" }} />
+                    <div className={styles.overlay}></div>
+                    <span className={styles.tabText}>Recipe</span>
+                </div>
+                <p className={styles.tabDescription}>Get the best recipes to try at home, from desserts to main courses.</p>
             </div>
-            <p className={styles.tabDescription}>Get the best recipes to try at home, from desserts to main courses.</p> {/* Description for the tab */}
-          </div>
         </Link>
+
         
         {/* Link to 'Navigation' section with an image and description */}
         <Link href="/navigation">
