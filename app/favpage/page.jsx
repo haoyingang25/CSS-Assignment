@@ -68,6 +68,8 @@ const FavPage = () => {
                                             alt={dish.alt}
                                             className={styles.favoriteImage}
                                         />
+                                        <p className={styles.caption}>{dish.alt}</p>
+                                        <p className={styles.description}>{dish.description}</p>
                                         <p className={styles.rating}>
                                             Rating: {dish.rating.stars} ⭐ ({dish.rating.reviews} reviews)
                                         </p>
