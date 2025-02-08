@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "app/style/styleTypeRecipe.module.css";
+import styles from "app/style/styleMainRecipe.module.css";
 
 const koreanRecipes = [
     {
@@ -48,7 +48,7 @@ const KoreanRecipePage = () => {
             </div>
             <div className={styles.buttonContainer}>
                 <Link href="/recipe" passHref>
-                    <button className={styles.backToRecipesButton}>Back to Recipes</button>
+                    <button className={styles.backToHomeButton}>Back to Recipes</button>
                 </Link>
             </div>
             {/* Footer Section */}
