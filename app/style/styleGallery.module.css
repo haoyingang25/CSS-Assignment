@@ -98,6 +98,11 @@
   transform: scale(1.1); /* Slightly enlarges the image on hover */
 }
 
+.rating {
+    font-size: 16px;
+    margin-bottom: 20px; /* Increased spacing between rating and buttons */
+}
+
 .description {
   font-size: 18px;
   color: #777;
@@ -502,3 +507,4 @@
 .recipeButton:active {
     background-color: #2980b9;
 }
+
