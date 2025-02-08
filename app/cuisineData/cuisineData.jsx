@@ -24,6 +24,7 @@ export const cuisineData = {
       alt: "Chinese Dumplings", 
       location: { name: "Dumpling", address: "1 Chinatown Rd, Singapore" },
       rating: { stars: 4.5, reviews: 120 },
+      link: "chinese/chinese-dumplings",
     },
     {
       id: 2,
@@ -31,6 +32,7 @@ export const cuisineData = {
       alt: "Peking Duck",
       location: { name: "Peking Restaruant", address: "6 Orchard Rd, Singapore" },
       rating: { stars: 4.5, reviews: 1200 },
+      link: "chinese/peking-duck",
     },
     {
       id: 3,
@@ -38,6 +40,7 @@ export const cuisineData = {
       alt: "Carrot Cake",
       location: { name: "Lau Pa Sat", address: "23 Raffles Rd, Singapore" },
       rating: { stars: 4.5, reviews: 1222 },
+      link: "chinese/carrot-cake",
     },
     {
       id: 4,
@@ -45,6 +48,7 @@ export const cuisineData = {
       alt: "Dim Sum",
       location: { name: "Crystal Jade", address: "90 ChinaTown Rd, Singapore" },
       rating: { stars: 4.5, reviews: 2000 },
+      link: "chinese/dim-sum",
     },
     {
       id: 5,
@@ -52,6 +56,7 @@ export const cuisineData = {
       alt: "Popiah",
       location: { name: "Clementi Food Court", address: "12 Clementi Rd, Singapore" },
       rating: { stars: 4.5, reviews: 100 },
+      link: "chinese/popiah",
     },
   ],
 
@@ -63,6 +68,7 @@ export const cuisineData = {
       alt: "lasanga",
       location: { name: "Chill Cafe", address: "33 Marina Bay Dr, Singapore" },
       rating: { stars: 4.5, reviews: 1000 },
+      link: "italian/lasanga",
     },
     {
       id: 7,
@@ -70,6 +76,7 @@ export const cuisineData = {
       alt: "Pizza",
       location: { name: "Pizza Heaven", address: "159 City Square, Singapore" },
       rating: { stars: 4.5, reviews: 1201 },
+      link: "italian/pizza",
     },
     {
       id: 8,
@@ -77,6 +84,7 @@ export const cuisineData = {
       alt: "Pasta",
       location: { name: "Tipo", address: "101 City Square, Singapore" },
       rating: { stars: 4.5, reviews: 1203 },
+      link: "italian/pasta",
     },
     {
       id: 9,
@@ -84,6 +92,7 @@ export const cuisineData = {
       alt: "Tiramisu Cake",
       location: { name: "Dessert Palace", address: "99 City Square, Singapore" },
       rating: { stars: 4.5, reviews: 1250 },
+      link: "italian/tiramisu-cake",
     },
   ],
 
@@ -95,6 +104,7 @@ export const cuisineData = {
       alt: "Bibimbap",
       location: { name: "Korean", address: "66 Tanjong Pagar Rd, Singapore" },
       rating: { stars: 4.5, reviews: 1206 },
+      link: "korean/bibimbap",
     },
     {
       id: 11,
@@ -102,6 +112,7 @@ export const cuisineData = {
       alt: "Korean Rice Cake",
       location: { name: "Rice Cake", address: "10 Clake Quay Rd, Singapore" },
       rating: { stars: 4.5, reviews: 1270 },
+      link: "korean/tteokbokki",
     },
     {
       id: 12,
@@ -109,6 +120,7 @@ export const cuisineData = {
       alt: "Korean BBQ",
       location: { name: "Gangnam KBBQ", address: "5 Tanjong Pagar Rd, Singapore" },
       rating: { stars: 4.5, reviews: 1210 },
+      link: "korean/korean-barbeque",
     },
   ],
 
@@ -120,6 +132,7 @@ export const cuisineData = {
       alt: "Sushi",
       location: { name: "Sushi", address: "66 Clarke Quay, Singapore" },
       rating: { stars: 4.5, reviews: 1290 },
+      link: "japanese/sushi",
     },
     {
       id: 14,
@@ -127,6 +140,7 @@ export const cuisineData = {
       alt: "Ramen",
       location: { name: "Ramen", address: "7 Orchard Gateway, Singapore" },
       rating: { stars: 4.5, reviews: 3000 },
+      link: "japanese/ramen",
     },
     {
       id: 15,
@@ -134,6 +148,7 @@ export const cuisineData = {
       alt: "Tonkatsu",
       location: { name: "Tonkatsu", address: "70 Westage Gateway, Singapore" },
       rating: { stars: 4.5, reviews: 5020 },
+      link: "japanese/tonkatsu",
     },
     {
       id: 16,
@@ -141,6 +156,7 @@ export const cuisineData = {
       alt: "Onigiri",
       location: { name: "Japan shop", address: "8 Westage Gateway, Singapore" },
       rating: { stars: 4.5, reviews: 1209 },
+      link: "japanese/onigiri",
     },
     {
       id: 17,
@@ -148,6 +164,7 @@ export const cuisineData = {
       alt: "Japanese Pancakes",
       location: { name: "Pancake", address: "8 Vivo City, Singapore" },
       rating: { stars: 4.5, reviews: 1209 },
+      link: "japanese/japanese-pancakes",
     },
   ],
 };

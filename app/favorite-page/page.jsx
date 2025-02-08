@@ -1,4 +1,5 @@
-// //ANG HAO YING S10270430
+//Ayden Chionh S10266744
+//app/favorite-page/page.jsx
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -106,8 +107,8 @@ const FavPage = () => {
 
             {/* Back to Gallery Button */}
             <div className={styles.buttonGroup}>
-                <Link href="/cuisine">
-                    <button className={styles.backToGalleryButton}>Back to Gallery</button>
+                <Link href="/recipe">
+                    <button className={styles.backToGalleryButton}>Back to Recipes</button>
                 </Link>
             </div>
 
