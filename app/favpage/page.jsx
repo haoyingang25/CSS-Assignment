@@ -1,4 +1,4 @@
-// //ANG HAO YING S10270430
+﻿// //ANG HAO YING S10270430
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -68,8 +68,9 @@ const FavPage = () => {
                                             alt={dish.alt}
                                             className={styles.favoriteImage}
                                         />
-                                        <p className={styles.caption}>{dish.alt}</p>
-                                        <p className={styles.description}>{dish.description}</p>
+                                        <p className={styles.rating}>
+                                            Rating: {dish.rating.stars} ⭐ ({dish.rating.reviews} reviews)
+                                        </p>
                                         <div className={styles.buttonGroup}>
                                             {/* Link to the dish's recipe page */}
                                             <Link href={`/recipe/${dish.link}`}>
