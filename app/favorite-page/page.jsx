@@ -1,6 +1,4 @@
-﻿//Ayden Chionh S10266744
-// app/favorite-page/page.jsx
-'use client';
+﻿'use client';
 
 import React, { useState, useEffect } from 'react';
 import { cuisineData } from '../cuisineData/cuisineData'; // Ensure the path to the data is correct
@@ -68,7 +66,6 @@ const FavPage = () => {
                         <div className={styles.favoritesGrid}>
                             {/* Map through the favorite dish IDs to display their details */}
                             {favorites.map((dishId) => {
-                                // Safely find the dish details from cuisineData based on the dish ID
                                 const dish = Object.keys(cuisineData)
                                     .flatMap((cuisine) => {
                                         const cuisineItems = cuisineData[cuisine] || [];
@@ -164,18 +161,29 @@ const FavPage = () => {
                 <div className={styles.footerRight}>
                     <div className={styles.footerSection}>
                         <h3 className={styles.footerTitle}>Follow Us</h3>
-                        <p className={styles.footerContent}>Instagram | Facebook | Twitter</p>
+                        <p className={styles.footerContent}>
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a> {" "}|{" "}
+                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a> {" "}|{" "}
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+                        </p>
                     </div>
                     <div className={styles.footerSection}>
                         <h3 className={styles.footerTitle}>Newsletter</h3>
                         <p className={styles.footerContent}>Stay updated with the latest food news.</p>
-                        <p className={styles.footerContent}>Sign up for our newsletter!</p>
+                        <form className={styles.newsletterForm}>
+                            <input
+                                type="email"
+                                placeholder="Enter your email"
+                                className={styles.newsletterInput}
+                            />
+                            <button type="submit" className={styles.newsletterButton}>
+                                Sign Up
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
 
-            {/* Toastify Container (This is required for Toastify to work) */}
-            <ToastContainer />
         </motion.div>
     );
 };
