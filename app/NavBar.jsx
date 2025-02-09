@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.logo}>
-        <img src="/logo.jpeg" alt="Logo" />
+        <img src="/logo.png" alt="Logo" />
       </div>
       <ul className={styles.navList}>
         <li className={styles.navItem}>
@@ -26,6 +26,9 @@ const NavBar = () => {
         </li>
         <li className={styles.navItem}>
           <Link href="/navigation">Food Map</Link>
+        </li>
+        <li className={styles.navItem}>
+          <Link href="/favpage">Your Favourites</Link>
         </li>
       </ul>
 

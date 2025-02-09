@@ -163,6 +163,7 @@
 /* Navbar styles */
 .navbar {
     background-color: #6B4E3D;
+    width: 100%;
     display: flex;
     justify-content: space-between; /* Space between logo and nav items */
     align-items: center;
