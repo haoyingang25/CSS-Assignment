@@ -1,3 +1,5 @@
+// TEO WEE CHERNG KYSTON S10270092H
+
 import React from "react";
 import Link from "next/link";
 import styles from "app/style/stylesNav.module.css"; // Import the CSS module
