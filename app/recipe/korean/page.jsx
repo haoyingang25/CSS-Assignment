@@ -110,6 +110,7 @@ const KoreanRecipePage = () => {
                 </div>
             </div>
         </motion.div>
+    </div>
     );
 };
 

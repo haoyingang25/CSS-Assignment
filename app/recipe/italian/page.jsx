@@ -98,6 +98,7 @@ const ItalianRecipePage = () => {
                 </div>
             </div>
         </motion.div>
+    </div>
     );
 };
 
