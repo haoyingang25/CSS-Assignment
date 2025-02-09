@@ -152,6 +152,9 @@ const JapaneseRecipePage = () => {
                                 placeholder="Enter your email"
                                 className={styles.footerInput}
                             />
+                            <button type="submit" className={styles.newsletterButton}>
+                                Sign Up
+                            </button>
                         </div>
                     </div>
                 </div>

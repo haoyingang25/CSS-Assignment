@@ -305,10 +305,10 @@ const RecipeCard = ({ recipe }) => {
                         <p className={styles.footerContent}>
                             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                                 Instagram
-                            </a> | 
+                            </a> {" "}|{" "} 
                             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                                 Facebook
-                            </a> | 
+                            </a> {" "}|{" "} 
                             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
                                 Twitter
                             </a>
@@ -326,6 +326,9 @@ const RecipeCard = ({ recipe }) => {
                                 placeholder="Enter your email"
                                 className={styles.footerInput}
                             />
+                            <button type="submit" className={styles.newsletterButton}>
+                                Sign Up
+                            </button>
                         </div>
                     </div>
                 </div>
