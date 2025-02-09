@@ -10,7 +10,7 @@ import InteractiveMap from "./InteractiveMap"; // Import the InteractiveMap comp
 const HomePage = () => {
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
+      <header>
         <h1 className={styles.title}>Explore Foods Around the World</h1>
       </header>
 
@@ -54,11 +54,36 @@ const HomePage = () => {
         </section>
       </main>
 
-      <footer className={styles.footer}>
-        <p>&copy; 2025 All Rights Reserved | Explore Cuisines Around the World</p>
-      </footer>
-
       <button className={styles.backButton} onClick={() => window.history.back()}>Back</button>
+
+      {/* Footer Section */}
+      <footer className={styles.footer}>
+        {/* Left side of the footer */}
+        <div className={styles.footerLeft}>
+          <div className={styles.footerSection}>
+            <h3 className={styles.footerTitle}>About</h3>
+            <p className={styles.footerContent}>Sharing the best food experiences from around the world.</p>
+          </div>
+          <div className={styles.footerSection}>
+            <h3 className={styles.footerTitle}>Contact</h3>
+            <p className={styles.footerContent}>Email: contact@foodblog.com</p>
+            <p className={styles.footerContent}>Follow us on social media for the latest updates!</p>
+          </div>
+        </div>
+
+        {/* Right side of the footer */}
+        <div className={styles.footerRight}>
+          <div className={styles.footerSection}>
+            <h3 className={styles.footerTitle}>Follow Us</h3>
+            <p className={styles.footerContent}>Instagram | Facebook | Twitter</p>
+          </div>
+          <div className={styles.footerSection}>
+            <h3 className={styles.footerTitle}>Newsletter</h3>
+            <p className={styles.footerContent}>Stay updated with the latest food news.</p>
+            <p className={styles.footerContent}>Sign up for our newsletter!</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

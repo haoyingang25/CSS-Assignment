@@ -24,6 +24,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 120 },
       link: "chinese/chinese-dumplings",
       position: [39.9042, 116.4074], // Beijing, China
+      location: "Din Tai Fung, Beijing, China"
     },
     {
       id: 2,
@@ -32,6 +33,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1200 },
       link: "chinese/peking-duck",
       position: [22.3193, 114.1694], // Hong Kong
+      location: "Quanjude, Hong Kong"
     },
     {
       id: 3,
@@ -40,6 +42,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1222 },
       link: "chinese/carrot-cake",
       position: [1.3774628095642345, 103.772483603644], // Singapore
+      location: "Lau Pa Sat, Singapore"
     },
     {
       id: 4,
@@ -48,6 +51,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 2000 },
       link: "chinese/dim-sum",
       position: [31.2304, 121.4737], // Shanghai, China
+      location: "Jade Garden, Shanghai, China"
     },
     {
       id: 5,
@@ -56,41 +60,46 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 100 },
       link: "chinese/popiah",
       position: [1.3521, 103.8198], // Singapore
+      location: "Old Airport Road Food Centre, Singapore"
     },
   ],
 
   Italian: [
     {
-      id: 1,
+      id: 6,
       src: "/lasanga.png",
-      alt: "lasanga",
+      alt: "lasagna",
       rating: { stars: 4.5, reviews: 1000 },
-      link: "italian/lasanga",
+      link: "italian/lasagna",
       position: [41.9028, 12.4964], // Rome, Italy
+      location: "Trattoria da Enzo, Rome, Italy"
     },
     {
-      id: 2,
+      id: 7,
       src: "/pizza.jpg",
       alt: "Pizza",
       rating: { stars: 4.5, reviews: 1201 },
       link: "italian/pizza",
       position: [40.8518, 14.2681], // Naples, Italy
+      location: "L'Antica Pizzeria da Michele, Naples, Italy"
     },
     {
-      id: 3,
+      id: 8,
       src: "/pasta.jpg",
       alt: "Pasta",
       rating: { stars: 4.5, reviews: 1203 },
       link: "italian/pasta",
       position: [45.4642, 9.1900], // Milan, Italy
+      location: "Ristorante Da Oscar, Milan, Italy"
     },
     {
-      id: 4,
+      id: 9,
       src: "/Tiramisu.jpg",
       alt: "Tiramisu Cake",
       rating: { stars: 4.5, reviews: 1250 },
       link: "italian/tiramisu-cake",
       position: [43.7312, 10.3985], // Florence, Italy 
+      location: "Le Volpi e l'Uva, Florence, Italy"
     },
   ],
 
@@ -102,6 +111,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1206 },
       link: "korean/bibimbap",
       position: [37.5665, 126.9780], // Seoul, South Korea
+      location: "Gogung, Seoul, South Korea"
     },
     {
       id: 11,
@@ -110,6 +120,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1270 },
       link: "korean/tteokbokki",
       position: [35.1798, 129.0756], // Busan, South Korea
+      location: "Samjin Amook, Busan, South Korea"
     },
     {
       id: 12,
@@ -118,6 +129,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1210 },
       link: "korean/korean-barbeque",
       position: [36.3504, 127.3848], // Daejeon, South Korea
+      location: "Yeontabal BBQ, Daejeon, South Korea"
     },
   ],
 
@@ -129,6 +141,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1290 },
       link: "japanese/sushi",
       position: [35.6895, 139.6917], // Tokyo, Japan
+      location: "Sukiyabashi Jiro, Tokyo, Japan"
     },
     {
       id: 14,
@@ -137,6 +150,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 3000 },
       link: "japanese/ramen",
       position: [34.6937, 135.5023], // Osaka, Japan
+      location: "Ichiran, Osaka, Japan"
     },
     {
       id: 15,
@@ -145,6 +159,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 5020 },
       link: "japanese/tonkatsu",
       position: [34.6937, 135.5023], // Osaka, Japan
+      location: "Katsukura, Osaka, Japan"
     },
     {
       id: 16,
@@ -153,6 +168,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1209 },
       link: "japanese/onigiri",
       position: [35.0116, 135.7681], // Kyoto, Japan
+      location: "Musubi Kyoto, Kyoto, Japan"
     },
     {
       id: 17,
@@ -161,6 +177,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1209 },
       link: "japanese/japanese-pancakes",
       position: [34.6937, 135.5023], // Osaka, Japan
+      location: "Happy Pancake, Osaka, Japan"
     },
   ],
 };

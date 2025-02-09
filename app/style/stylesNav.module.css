@@ -22,6 +22,7 @@
   font-size: 2.5em;
   text-align: center;
   margin-bottom: 20px;
+  color: #2c3e50; /* Dark color for the title */
 }
 
 .navbar {
@@ -79,7 +80,6 @@
   padding: 20px;
   text-align: center;
   width: 200px;
-  transition: transform 0.2s, box-shadow 0.2s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow for consistency */
 }
 
@@ -93,42 +93,113 @@
   margin: 10px 0 0;
   font-size: 1.1em;
   font-weight: bold;
-  color: black; /* Set text color to black */
+  color: #2c3e50; /* Dark color for the text */
 }
 
 .cuisineCard:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.mapContainer h2,
+.cuisineSection h2 {
+  color: #2c3e50; /* Dark color for the section titles */
+}
+
+/* Footer Section */
 .footer {
-  background-color: #4CAF50; /* Updated to match the color scheme */
-  color: black;
-  text-align: center;
-  padding: 10px;
-  margin-top: 40px;
-  padding: 20px;
-  background-color: #f8f8f8;
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
+  padding: 40px;
+  background-color: #2c3e50;
+  color: #fff;
+  font-size: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  position: relative;
+  bottom: 0;
+  margin-top: 20px;
 }
 
-.footerLeft,
-.footerRight {
-  flex: 1;
-}
-
-.footerSection {
-  margin-bottom: 20px;
-}
-
+/* Footer Section Title */
 .footerTitle {
-  font-size: 1.2em;
+  font-size: 18px;
+  font-weight: bold;
   margin-bottom: 10px;
+  color: #bfa15f;
 }
 
+/* Footer Content */
 .footerContent {
-  margin: 5px 0;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+/* Left Side (Reservation & Contact) */
+.footerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Right Side (Opening Hours & Other Branches) */
+.footerRight {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Media Queries */
+
+/* Mobile - 480px and below */
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .footerTitle {
+    font-size: 16px;
+  }
+
+  .footerContent {
+    font-size: 12px;
+  }
+}
+
+/* Tablet - 768px and below */
+@media (max-width: 768px) {
+  .footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .footerTitle {
+    font-size: 17px;
+  }
+
+  .footerContent {
+    font-size: 13px;
+  }
+}
+
+/* Desktop - 1024px and above */
+@media (min-width: 1024px) {
+  .footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+  }
+
+  .footerTitle {
+    font-size: 18px;
+  }
+
+  .footerContent {
+    font-size: 14px;
+  }
 }
 
 .backButton {
@@ -159,11 +230,14 @@
 }
 
 .card {
+  background-color: white; /* White panel */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow */
+  overflow: hidden;
   display: flex;
   align-items: center;
   border: 1px solid #ddd;
   padding: 10px;
-  border-radius: 5px;
 }
 
 .imageContainer {
@@ -196,14 +270,14 @@
 .label {
   font-size: 1.2em;
   margin-bottom: 10px;
-  color: black; /* Set text color to black */
+  color: #2c3e50; /* Dark color for the text */
 }
 
 .description,
 .location,
 .rating {
   margin: 5px 0;
-  color: black; /* Set text color to black */
+  color: #2c3e50; /* Dark color for the text */
 }
 
 .buttonContainer {
