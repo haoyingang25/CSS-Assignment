@@ -6,6 +6,8 @@ import Link from "next/link";
 import { cuisineData } from "app/cuisineData/cuisineData"; // Correct the import path
 import styles from "app/style/stylesNav.module.css"; // Import the CSS module
 import NavBar from "@/app/NavBar";
+=======
+import { motion } from "framer-motion"; // Import Framer Motion
 
 const ItalianCuisine = () => {
   const italianFoods = cuisineData.Italian;
@@ -13,6 +15,12 @@ const ItalianCuisine = () => {
   return (
     <div className={styles.container}>
       <NavBar />
+    <motion.div
+      initial={{ opacity: 0, y: 20 }} // Start with 0 opacity and shifted downward
+      animate={{ opacity: 1, y: 0 }} // Animate to full opacity and original position
+      transition={{ duration: 0.8, ease: "easeOut" }} // Smooth transition
+      className={styles.container}
+    >
       <h1 className={styles.title}>Italian Cuisine</h1>
       <h1 className={styles.subtitle}>Click on the dishes to find out their history!</h1>
       <ul className={styles.list}>
@@ -48,6 +56,13 @@ const ItalianCuisine = () => {
           <Link href="/navigation" passHref>
             <button className={styles.backButton}>Back</button>
           </Link>
+        <div className={styles.buttonsWrapper}>
+          <button
+            className={styles.backButton}
+            onClick={() => window.history.back()}
+          >
+            Back
+          </button>
         </div>
       </div>
       {/* Footer Section */}
@@ -56,12 +71,18 @@ const ItalianCuisine = () => {
         <div className={styles.footerLeft}>
           <div className={styles.footerSection}>
             <h3 className={styles.footerTitle}>About</h3>
-            <p className={styles.footerContent}>Sharing the best food experiences from around the world.</p>
+            <p className={styles.footerContent}>
+              Sharing the best food experiences from around the world.
+            </p>
           </div>
           <div className={styles.footerSection}>
             <h3 className={styles.footerTitle}>Contact</h3>
-            <p className = {styles.footerContent}>Email: contact@foodblog.com</p>
-            <p className={styles.footerContent}>Follow us on social media for the latest updates!</p>
+            <p className={styles.footerContent}>
+              Email: contact@foodblog.com
+            </p>
+            <p className={styles.footerContent}>
+              Follow us on social media for the latest updates!
+            </p>
           </div>
         </div>
 
@@ -69,16 +90,22 @@ const ItalianCuisine = () => {
         <div className={styles.footerRight}>
           <div className={styles.footerSection}>
             <h3 className={styles.footerTitle}>Follow Us</h3>
-            <p className={styles.footerContent}>Instagram | Facebook | Twitter</p>
+            <p className={styles.footerContent}>
+              Instagram | Facebook | Twitter
+            </p>
           </div>
           <div className={styles.footerSection}>
             <h3 className={styles.footerTitle}>Newsletter</h3>
-            <p className={styles.footerContent}>Stay updated with the latest food news.</p>
-            <p className={styles.footerContent}>Sign up for our newsletter!</p>
+            <p className={styles.footerContent}>
+              Stay updated with the latest food news.
+            </p>
+            <p className={styles.footerContent}>
+              Sign up for our newsletter!
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

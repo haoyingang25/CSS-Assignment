@@ -13,14 +13,27 @@ const HomePage = () => {
       <header>
         <h1 className={styles.title}>Explore Foods Around the World</h1>
       </header>
+import { motion } from "framer-motion"; // Import Framer Motion
 
-      <main>
-        <section className={styles.mapContainer}>
-          <h2>Explore the World Map</h2>
-          <div className={styles.mapWrapper}>
-            <InteractiveMap />
-          </div>
-        </section>
+const HomePage = () => {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 20 }} // Start with 0 opacity and slightly shifted downward
+            animate={{ opacity: 1, y: 0 }} // Animate to full opacity and original position
+            transition={{ duration: 0.8, ease: "easeOut" }} // Set animation duration and easing
+            className={styles.container}
+        >
+            <header>
+                <h1 className={styles.title}>Explore Foods Around the World</h1>
+            </header>
+
+            <main>
+                <section className={styles.mapContainer}>
+                    <h2>Explore the World Map</h2>
+                    <div className={styles.mapWrapper}>
+                        <InteractiveMap />
+                    </div>
+                </section>
 
         <section className={styles.cuisineSection}>
           <h2>Discover Cuisines</h2>
@@ -140,6 +153,71 @@ const HomePage = () => {
       </div>
     </div>
   );
+                <section className={styles.cuisineSection}>
+                    <h2>Discover Cuisines</h2>
+                    <div className={styles.cuisineCards}>
+                        {/* Displaying cuisines */}
+                        <div className={styles.cuisineCard}>
+                            <Link href="../navigation/chinese">
+                                <img src="/Flag_of_the_People's_Republic_of_China.svg.png" alt="Chinese Food" />
+                                <p>Chinese Cuisine</p>
+                            </Link>
+                        </div>
+                        <div className={styles.cuisineCard}>
+                            <Link href="../navigation/italian">
+                                <img src="/Flag_of_Italy.svg.png" alt="Italian Food" />
+                                <p>Italian Cuisine</p>
+                            </Link>
+                        </div>
+                        <div className={styles.cuisineCard}>
+                            <Link href="../navigation/korean">
+                                <img src="/Flag_of_South_Korea.svg.png" alt="Korean Food" />
+                                <p>Korean Cuisine</p>
+                            </Link>
+                        </div>
+                        <div className={styles.cuisineCard}>
+                            <Link href="../navigation/japanese">
+                                <img src="/Flag_of_Japan.svg.png" alt="Japanese Food" />
+                                <p>Japanese Cuisine</p>
+                            </Link>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <button className={styles.backButton} onClick={() => window.history.back()}>Back</button>
+
+            {/* Footer Section */}
+            <footer className={styles.footer}>
+                {/* Left side of the footer */}
+                <div className={styles.footerLeft}>
+                    <div className={styles.footerSection}>
+                        <h3 className={styles.footerTitle}>About</h3>
+                        <p className={styles.footerContent}>Sharing the best food experiences from around the world.</p>
+                    </div>
+                    <div className={styles.footerSection}>
+                        <h3 className={styles.footerTitle}>Contact</h3>
+                        <p className={styles.footerContent}>Email: contact@foodblog.com</p>
+                        <p className={styles.footerContent}>Follow us on social media for the latest updates!</p>
+                    </div>
+                </div>
+
+                {/* Right side of the footer */}
+                <div className={styles.footerRight}>
+                    <div className={styles.footerSection}>
+                        <h3 className={styles.footerTitle}>Follow Us</h3>
+                        <p className={styles.footerContent}>Instagram | Facebook | Twitter</p>
+                    </div>
+                    <div className={styles.footerSection}>
+                        <h3 className={styles.footerTitle}>Newsletter</h3>
+                        <p className={styles.footerContent}>Stay updated with the latest food news.</p>
+                        <p className={styles.footerContent}>Sign up for our newsletter!</p>
+                    </div>
+                </div>
+            </footer>
+        </motion.div>
+    );
 };
 
 export default HomePage;
+
