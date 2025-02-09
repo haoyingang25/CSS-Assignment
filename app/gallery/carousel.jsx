@@ -1,4 +1,4 @@
-//ANG HAO YING S10270430
+//ANG HAO YING S10270430F
 //overview:
 //this page is used for displaying images, allowing the images to swipe by importing the swiper library
 //it allows users to add to favorites. this page also provides a button which will link them to a new page to view their favorites
