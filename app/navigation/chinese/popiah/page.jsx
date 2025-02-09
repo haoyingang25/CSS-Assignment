@@ -4,97 +4,33 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image"; // Import Image component for the picture
+import Image from "next/image";
 import NavBar from "@/app/NavBar";
+import styles from "app/style/styleDishes.module.css";
 
 const Popiah = () => {
-  const containerStyle = {
-    backgroundColor: "#DED3C2",
-    minHeight: "100vh",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    padding: "20px",
-    fontFamily: "'Lora', serif",
-  };
-
-  const contentWrapperStyle = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    textAlign: "center",
-    maxWidth: "800px",
-    width: "100%",
-    marginTop: "50px",
-  };
-
-  const titleStyle = {
-    fontSize: "2.5em",
-    color: "#6B4E3D",
-    marginBottom: "20px",
-  };
-
-  const imageContainerStyle = {
-    marginBottom: "20px",
-  };
-
-  const imageStyle = {
-    borderRadius: "10px",
-  };
-
-  const descriptionStyle = {
-    fontSize: "1.2em",
-    color: "#4F4F4F",
-    marginBottom: "40px",
-  };
-
-  const backButtonStyle = {
-    backgroundColor: "#0070f3",
-    color: "white",
-    border: "none",
-    padding: "10px 20px",
-    borderRadius: "5px",
-    cursor: "pointer",
-    margin: "20px auto",
-    fontSize: "18px",
-    transition: "background-color 0.3s ease",
-    display: "block",
-    width: "fit-content",
-  };
-
-  const backButtonHoverStyle = {
-    backgroundColor: "#005bb5",
-  };
-
   return (
-    <div style={containerStyle}>
+    <div className={styles.container}>
       <NavBar />
-      <div style={contentWrapperStyle}>
-        <h1 style={titleStyle}>Popiah</h1>
-        <div style={imageContainerStyle}>
+      <div className={styles.contentWrapper}>
+        <h1 className={styles.title}>Popiah</h1>
+        <div className={styles.imageContainer}>
           <Image
-            src="/popiah.jpg" // Path to the image
+            src="/popiah.jpg"
             alt="Popiah"
             width={600}
             height={400}
-            style={imageStyle}
+            className={styles.image}
           />
         </div>
-        <p style={descriptionStyle}>
-          Popiah is a popular Chinese dish that originated from the Fujian province in China. It is a fresh spring roll filled with a variety of ingredients such as julienned vegetables, tofu, eggs, and sometimes meat or seafood. The filling is wrapped in a thin, crepe-like skin made from wheat flour.
+        <p className={styles.description}>
+          Popiah is a Fujian/Chaozhou-style fresh spring roll filled with a variety of ingredients such as jicama, carrots, bean sprouts, and shrimp. It is typically served with a sweet sauce and wrapped in a thin, crepe-like skin.
         </p>
-        <p style={descriptionStyle}>
-          The name "popiah" comes from the Hokkien word "poh pia," which means "thin wafer." Popiah is often served with a sweet and savory sauce made from hoisin sauce, soy sauce, and garlic. It is a popular dish during festive occasions and family gatherings.
-        </p>
-        <p style={descriptionStyle}>
-          In Singapore and Malaysia, popiah is commonly found at hawker centers and food courts. It is enjoyed as a light snack or appetizer and is often made to order, allowing diners to customize their fillings and sauces. Popiah is a delicious and healthy dish that showcases the fresh flavors and textures of its ingredients.
+        <p className={styles.description}>
+          Popiah is a popular dish in Southeast Asia, particularly in Malaysia, Singapore, and Thailand. It is often enjoyed as a snack or appetizer and is a staple at family gatherings and celebrations.
         </p>
         <Link href="/navigation/chinese" passHref>
-          <button
-            style={backButtonStyle}
-            onMouseOver={(e) => (e.currentTarget.style.backgroundColor = backButtonHoverStyle.backgroundColor)}
-            onMouseOut={(e) => (e.currentTarget.style.backgroundColor = backButtonStyle.backgroundColor)}
-          >
+          <button className={styles.backButton}>
             Back to Chinese Cuisine
           </button>
         </Link>
