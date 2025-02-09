@@ -82,7 +82,7 @@ const cuisineData = {
     { 
       id: 6, 
       src: "/lasanga.png", 
-      alt: "lasanga", 
+      alt: "lasagna", 
       description: "Enjoy it layer by layer. Flavourful.",
       location: { name: "Chill Cafe", address: "33 Marina Bay Dr, Singapore" },
       rating: { stars: 4.5, reviews: 1000 },
