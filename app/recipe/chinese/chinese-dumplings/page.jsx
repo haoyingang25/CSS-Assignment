@@ -282,6 +282,9 @@ const RecipeCard = ({ recipe }) => {
                             ))}
                         </ol>
                     </div>
+                    <Link href="/recipe" passHref>
+                        <button className={styles.backButton}>Back to recipes</button>
+                    </Link>
                 </div>
 
                 {/* Footer Section */}
