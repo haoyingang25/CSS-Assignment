@@ -100,16 +100,16 @@ const HomePage = () => {
                 rel="noopener noreferrer"
               >
                 Instagram
-              </a>
-              |
+              </a>{" "} 
+              |{" "} 
               <a
                 href="https://www.facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Facebook
-              </a>
-              |
+              </a>{" "} 
+              |{" "} 
               <a
                 href="https://twitter.com"
                 target="_blank"
