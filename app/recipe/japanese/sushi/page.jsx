@@ -94,21 +94,25 @@ const Timer = () => {
     const [inputMinutes, setInputMinutes] = useState(0);
     const [inputSeconds, setInputSeconds] = useState(0);
 
+    // Load the audio file for the finish sound
+    const timerFinishSound = new Audio("/Classic alarm clock.mp3"); // Replace with your sound file path
+
     useEffect(() => {
         let timer;
         if (isRunning && time > 0) {
             timer = setInterval(() => {
                 setTime((prevTime) => prevTime - 1);
             }, 1000);
-        } else if (time === 0) {
+        } else if (time === 0 && isRunning) {
             setIsRunning(false);
+            timerFinishSound.play(); // Play sound when timer finishes
         }
         return () => clearInterval(timer);
     }, [isRunning, time]);
 
     const handleStartStop = () => {
         if (time === 0) {
-            setTime(inputMinutes * 60 + parseInt(inputSeconds));
+            setTime(inputMinutes * 60 + parseInt(inputSeconds || 0));
         }
         setIsRunning(!isRunning);
     };
@@ -155,12 +159,16 @@ const Timer = () => {
                 <button onClick={handleStartStop} className={styles.timerButton}>
                     {isRunning ? "Stop" : "Start"}
                 </button>
-                <button onClick={handleReset} className={`${styles.timerButton} ${styles.timerButtonReset}`}>Reset</button>
+                <button
+                    onClick={handleReset}
+                    className={`${styles.timerButton} ${styles.timerButtonReset}`}
+                >
+                    Reset
+                </button>
             </div>
         </div>
     );
 };
-
 const RecipeCard = ({ recipe }) => {
     const [ingredients, setIngredients] = useState(recipe.ingredients);
 
