@@ -4,7 +4,7 @@
 // Import the React library and the Carousel component from the correct relative path
 import React from "react";
 import Carousel from "../gallery/carousel"; // Correct relative path
-
+import NavBar from "../NavBar";
 
 const CuisinePage = () => {
   return (
@@ -15,9 +15,11 @@ const CuisinePage = () => {
         padding: "40px 20px",
       }}
     >
+      <NavBar />
       <h1
         style={{
           textAlign: "center",
+          marginTop: "50px",
           marginBottom: "20px",
           color: "#3E2723", // Deep Espresso for sophistication
           fontFamily: "'Playfair Display', serif",

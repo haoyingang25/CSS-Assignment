@@ -12,24 +12,6 @@ const AboutPage = () => {
     return (
         <div className={styles.container}>
             <NavBar />
-            <div className={styles.navbar}>
-                <div className={styles.logoContainer}>
-                    <Image src="/logo.jpeg" alt="Logo" className={styles.logo} width={200} height={200} />
-                </div>
-                <div className={styles.navLinks}>
-                    <Link href="/cuisine">
-                        <button className={styles.navButton}>Food Gallery</button>
-                    </Link>
-                    <Link href="/recipe">
-                        <button className={styles.navButton}>Recipes</button>
-                    </Link>
-                    <Link href="/navigation">
-                        <button className={styles.navButton}>Navigation</button>
-                    </Link>
-
-                </div>
-            </div>
-
             <div className={styles.contentWrapper}>
                 <h1 className={styles.heading}>About Us</h1>
                 <p className={styles.description}>

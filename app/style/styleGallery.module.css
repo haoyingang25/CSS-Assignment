@@ -513,3 +513,41 @@
     background-color: #2980b9;
 }
 
+/* Navbar styles */
+.navbar {
+  background-color: #6B4E3D;
+  display: flex;
+  justify-content: space-between; /* Space between logo and nav items */
+  align-items: center;
+}
+
+.logo {
+  margin-left: 20px; /* Add left margin to the logo */
+}
+
+.logo img {
+  height: 40px;
+}
+
+.navList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navItem {
+  padding: 14px 20px;
+}
+
+.navItem a {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+.navItem a:hover {
+  color: #bfa15f;
+  transform: scale(1.05);
+}
