@@ -1,6 +1,6 @@
-/*Ang Hao Ying S10270430*/
+/*Ang Hao Ying S10270430F*/
 /*Ayden S10266744*/
-/*Kyston S10270092*/
+/*TEO WEE CHERNG KYSTON S10270092H*/
 
 import React from "react";
 import Link from "next/link";

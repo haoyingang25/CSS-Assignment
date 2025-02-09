@@ -1,6 +1,6 @@
-/*Ang Hao Ying S10270430*/
-/*Ayden S10266744*/
-/*Kyston S10270092*/
+/*Ang Hao Ying S10270430F*/
+/*Ayden Chionh S10266744E*/
+/*TEO WEE CHERNG KYSTON S10270092H*/
 "use client"; // Indicates that this file uses client-side features of Next.js
 
 import React from "react"; // Importing React to use JSX and React components
