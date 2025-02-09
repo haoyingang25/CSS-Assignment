@@ -4,6 +4,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion"; // Import Framer Motion
 import styles from "app/style/styleMainRecipe.module.css";
 
 const recipes = [
@@ -39,12 +40,21 @@ const MainRecipePage = () => {
     }, []);
 
     return (
-        <div className={styles.container}>
+        <motion.div
+            className={styles.container}
+            initial={{ opacity: 0 }} // Start with 0 opacity
+            animate={{ opacity: 1 }} // Animate to full opacity
+            transition={{ duration: 1 }} // Duration of the animation
+        >
             <h1 className={styles.title}>Explore Recipes from Around the World</h1>
             <div className={styles.grid}>
                 {recipes.map((recipe, index) => (
                     <Link href={recipe.link} key={index} passHref>
-                        <div className={styles.card}>
+                        <motion.div
+                            className={styles.card}
+                            whileHover={{ scale: 1.05 }} // Add hover effect to scale the card
+                            transition={{ duration: 0.3 }}
+                        >
                             <div className={styles.imageContainer}>
                                 <Image
                                     src={recipe.image}
@@ -56,35 +66,54 @@ const MainRecipePage = () => {
                                 <div className={styles.overlay}></div>
                             </div>
                             <h2 className={styles.label}>{recipe.label}</h2>
-                        </div>
+                        </motion.div>
                     </Link>
                 ))}
             </div>
             <div className={styles.buttonContainer}>
                 <div className={styles.buttonsWrapper}>
-                    {/* View Favorites Button */}
                     <Link href="/favorite-page" passHref>
-                        <button className={styles.viewFavoritesButton}>
+                        <motion.button
+                            className={styles.viewFavoritesButton}
+                            whileHover={{ scale: 1.1 }} // Hover effect on button
+                            whileTap={{ scale: 0.95 }} // Click effect
+                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        >
                             View Favorites ({favoriteCount})
-                        </button>
+                        </motion.button>
                     </Link>
                     <Link href="/" passHref>
-                        <button className={styles.backToHomeButton}>Back to Home</button>
+                        <motion.button
+                            className={styles.backToHomeButton}
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        >
+                            Back to Home
+                        </motion.button>
                     </Link>
                 </div>
             </div>
             {/* Footer Section */}
-            <div className={styles.footer}>
+            <motion.div
+                className={styles.footer}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+            >
                 {/* Left side of the footer */}
                 <div className={styles.footerLeft}>
                     <div className={styles.footerSection}>
                         <h3 className={styles.footerTitle}>About</h3>
-                        <p className={styles.footerContent}>Sharing the best food experiences from around the world.</p>
+                        <p className={styles.footerContent}>
+                            Sharing the best food experiences from around the world.
+                        </p>
                     </div>
                     <div className={styles.footerSection}>
                         <h3 className={styles.footerTitle}>Contact</h3>
                         <p className={styles.footerContent}>Email: contact@foodblog.com</p>
-                        <p className={styles.footerContent}>Follow us on social media for the latest updates!</p>
+                        <p className={styles.footerContent}>
+                            Follow us on social media for the latest updates!
+                        </p>
                     </div>
                 </div>
 
@@ -100,10 +129,11 @@ const MainRecipePage = () => {
                         <p className={styles.footerContent}>Sign up for our newsletter!</p>
                     </div>
                 </div>
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     );
 };
 
 export default MainRecipePage;
+
 

@@ -1,11 +1,15 @@
 ﻿//Ayden Chionh S10266744
-//app/favorite-page/page.jsx
+// app/favorite-page/page.jsx
 'use client';
 
 import React, { useState, useEffect } from 'react';
 import { cuisineData } from '../cuisineData/cuisineData'; // Ensure the path to the data is correct
 import styles from '../style/styleGallery.module.css'; // Import CSS module for styling
 import Link from 'next/link'; // Import Link component for navigation
+import Image from "next/image";
+import { toast, ToastContainer } from 'react-toastify'; // Import ToastContainer along with toast
+import 'react-toastify/dist/ReactToastify.css'; // Import Toastify styles
+import { motion } from 'framer-motion'; // Import Framer Motion
 
 const FavPage = () => {
     const [favorites, setFavorites] = useState([]);
@@ -29,12 +33,18 @@ const FavPage = () => {
         const updatedFavorites = favorites.filter((id) => id !== dishId);
         setFavorites(updatedFavorites); // Update the state with the new list
         localStorage.setItem('favorites', JSON.stringify(updatedFavorites)); // Update localStorage
+
+        // Show success notification using Toastify
+        toast.success('Successfully removed from favorites!');
     };
 
     // Function to clear all dishes from the favorites list
     const clearAllFavorites = () => {
         setFavorites([]); // Reset the favorites list in the state
         localStorage.setItem('favorites', JSON.stringify([])); // Clear the favorites list in localStorage
+
+        // Show success notification using Toastify
+        toast.success('All favorites cleared!');
     };
 
     // Show a loading message if the cuisine data is not available or if it's empty
@@ -43,7 +53,12 @@ const FavPage = () => {
     }
 
     return (
-        <div className={styles.carouselContainer}>
+        <motion.div
+            className={styles.carouselContainer}
+            initial={{ opacity: 0 }} // Start with 0 opacity
+            animate={{ opacity: 1 }} // Animate to full opacity
+            transition={{ duration: 1 }} // Duration of the animation
+        >
             {/* Page Title */}
             <h1 className={styles.pageTitle}>Your Favorite Dishes</h1>
             <div className={styles.swiper}>
@@ -62,11 +77,19 @@ const FavPage = () => {
                                     .find((item) => item.id === dishId);
 
                                 return dish ? (
-                                    <div key={dishId} className={styles.favoriteItem}>
+                                    <motion.div
+                                        key={dishId}
+                                        className={styles.favoriteItem}
+                                        initial={{ opacity: 0 }} // Start with 0 opacity for each item
+                                        animate={{ opacity: 1 }} // Animate to full opacity
+                                        transition={{ delay: 0.2, duration: 0.6 }} // Delay and duration for each item
+                                    >
                                         {/* Display dish image, details, and a button to remove the dish */}
-                                        <img
+                                        <Image
                                             src={dish.src}
                                             alt={dish.alt}
+                                            width={500}
+                                            height={300}
                                             className={styles.favoriteImage}
                                         />
                                         <p className={styles.caption}>{dish.alt}</p>
@@ -86,7 +109,7 @@ const FavPage = () => {
                                                 Remove
                                             </button>
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 ) : (
                                     <p key={dishId}>Dish not found</p> // Handle case where dish details are not found
                                 );
@@ -150,8 +173,12 @@ const FavPage = () => {
                     </div>
                 </div>
             </div>
-        </div>
+
+            {/* Toastify Container (This is required for Toastify to work) */}
+            <ToastContainer />
+        </motion.div>
     );
 };
 
 export default FavPage;
+
