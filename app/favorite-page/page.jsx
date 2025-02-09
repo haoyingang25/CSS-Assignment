@@ -1,4 +1,6 @@
-﻿'use client';
+﻿//Ayden Chionh S10266744
+//app/favorite-page/page.jsx
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import { cuisineData } from '../cuisineData/cuisineData'; // Ensure the path to the data is correct
