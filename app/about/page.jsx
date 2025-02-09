@@ -1,16 +1,17 @@
 /*Ang Hao Ying S10270430*/
 /*Ayden S10266744*/
-/*Kyston*/
+/*Kyston S10270092*/
 
 import React from "react";
 import Link from "next/link";
 import Image from "next/image"; // Import Image component for the logo
 import styles from "app/style/styleAbout.module.css";
+import NavBar from "@/app/NavBar";
 
 const AboutPage = () => {
     return (
         <div className={styles.container}>
-            {/* Navigation Bar */}
+            <NavBar />
             <div className={styles.navbar}>
                 <div className={styles.logoContainer}>
                     <Image src="/logo.jpeg" alt="Logo" className={styles.logo} width={200} height={200} />

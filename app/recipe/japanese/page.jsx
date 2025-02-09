@@ -5,6 +5,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "app/style/styleMainRecipe.module.css";
+import NavBar from "@/app/NavBar";
 
 const japaneseRecipes = [
     {
@@ -37,6 +38,7 @@ const japaneseRecipes = [
 const JapaneseRecipePage = () => {
     return (
         <div className={styles.container}>
+            <NavBar />
             <h1 className={styles.title}>Explore Japanese Recipes</h1>
             <div className={styles.grid}>
                 {japaneseRecipes.map((recipe, index) => (

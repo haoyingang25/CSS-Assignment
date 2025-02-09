@@ -24,7 +24,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 120 },
       link: "chinese/chinese-dumplings",
       position: [39.9042, 116.4074], // Beijing, China
-      location: "Din Tai Fung, Beijing, China"
+      location: "China, Bei Jing Shi, Chao Yang Qu. 新源西里中街24号, Postal Code 100027"
     },
     {
       id: 2,
@@ -33,7 +33,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1200 },
       link: "chinese/peking-duck",
       position: [22.3193, 114.1694], // Hong Kong
-      location: "Quanjude, Hong Kong"
+      location: "9 Shuaifuyuan Hu Tong, Wangfujing, Dongcheng, Beijing China 100005 "
     },
     {
       id: 3,
@@ -42,7 +42,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1222 },
       link: "chinese/carrot-cake",
       position: [1.3774628095642345, 103.772483603644], // Singapore
-      location: "Lau Pa Sat, Singapore"
+      location: "Lau Pa Sat, 18 Raffles Quay Singapore 048582"
     },
     {
       id: 4,
@@ -51,7 +51,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 2000 },
       link: "chinese/dim-sum",
       position: [31.2304, 121.4737], // Shanghai, China
-      location: "Jade Garden, Shanghai, China"
+      location: "1121 Yan an Rd (M), Jing An, Shanghai, China, 200041"
     },
     {
       id: 5,
@@ -60,7 +60,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 100 },
       link: "chinese/popiah",
       position: [1.3521, 103.8198], // Singapore
-      location: "Old Airport Road Food Centre, Singapore"
+      location: "Old Airport Road Food Centre, 51 old airport road. Singapore 390051"
     },
   ],
 
@@ -72,7 +72,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1000 },
       link: "italian/lasagna",
       position: [41.9028, 12.4964], // Rome, Italy
-      location: "Trattoria da Enzo, Rome, Italy"
+      location: "Trattoria da Enzo, via dei Vascellari,29,00153 Roma RM Italy"
     },
     {
       id: 7,
@@ -81,7 +81,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1201 },
       link: "italian/pizza",
       position: [40.8518, 14.2681], // Naples, Italy
-      location: "L'Antica Pizzeria da Michele, Naples, Italy"
+      location: "L'Antica Pizzeria da Michele, Via Cesare Sersale, 1, 80139 Napoli NA, Italy "
     },
     {
       id: 8,
@@ -90,7 +90,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1203 },
       link: "italian/pasta",
       position: [45.4642, 9.1900], // Milan, Italy
-      location: "Ristorante Da Oscar, Milan, Italy"
+      location: "Ristorante Da Oscar, Via Lazzaro Palazzi, 4, 20124 Milano MI, Italy "
     },
     {
       id: 9,
@@ -99,7 +99,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1250 },
       link: "italian/tiramisu-cake",
       position: [43.7312, 10.3985], // Florence, Italy 
-      location: "Le Volpi e l'Uva, Florence, Italy"
+      location: "Le Volpi e l'Uva, Piazza dei Rossi, 1R, 50125 Firenze Fl, Italy "
     },
   ],
 
@@ -111,7 +111,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1206 },
       link: "korean/bibimbap",
       position: [37.5665, 126.9780], // Seoul, South Korea
-      location: "Gogung, Seoul, South Korea"
+      location: "myeondong joomak,  25-1 myeondong 10-Gil, jung district Seoul, South Korea "
     },
     {
       id: 11,
@@ -120,7 +120,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1270 },
       link: "korean/tteokbokki",
       position: [35.1798, 129.0756], // Busan, South Korea
-      location: "Samjin Amook, Busan, South Korea"
+      location: "Bunsikdang, 192 Jungang-Daero, Dong-Gu, Busan, South Korea"
     },
     {
       id: 12,
@@ -129,7 +129,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1210 },
       link: "korean/korean-barbeque",
       position: [36.3504, 127.3848], // Daejeon, South Korea
-      location: "Yeontabal BBQ, Daejeon, South Korea"
+      location: "Daejeon korean bbq chicken restaurant Hoyeonjae, South Korea, Bongmyeon-dong 623-3 KR "
     },
   ],
 
@@ -141,7 +141,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1290 },
       link: "japanese/sushi",
       position: [35.6895, 139.6917], // Tokyo, Japan
-      location: "Sukiyabashi Jiro, Tokyo, Japan"
+      location: "Sukiyabashi Jiro, 104-0061 Tokyo, Chuo city, Ginza, 4 Chome-2-15 "
     },
     {
       id: 14,
@@ -150,7 +150,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 3000 },
       link: "japanese/ramen",
       position: [34.6937, 135.5023], // Osaka, Japan
-      location: "Ichiran, Osaka, Japan"
+      location: "Ichiran, 1 Chome-4-16 Dotonburi, Chuo Ward, Osaka, 542-0071"
     },
     {
       id: 15,
@@ -159,7 +159,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 5020 },
       link: "japanese/tonkatsu",
       position: [34.6937, 135.5023], // Osaka, Japan
-      location: "Katsukura, Osaka, Japan"
+      location: "Katsukura, 530-8350 Osaka, Kita ward, Kakudacho, 8-7"
     },
     {
       id: 16,
@@ -168,7 +168,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1209 },
       link: "japanese/onigiri",
       position: [35.0116, 135.7681], // Kyoto, Japan
-      location: "Musubi Kyoto, Kyoto, Japan"
+      location: "Gochisou Yakimusubi Onimaru Kyoto Shijo Kawaramachi,  7 otabimiyamotocho, Shimogyo Ward, Kyoto, 600-8004"
     },
     {
       id: 17,
@@ -177,7 +177,7 @@ export const cuisineData = {
       rating: { stars: 4.5, reviews: 1209 },
       link: "japanese/japanese-pancakes",
       position: [34.6937, 135.5023], // Osaka, Japan
-      location: "Happy Pancake, Osaka, Japan"
+      location: "Happy Pancake, 542-0086 Osaka, Chuo ward, Nishishinsaibashi, 2 Chome-10-32"
     },
   ],
 };

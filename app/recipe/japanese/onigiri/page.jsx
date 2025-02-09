@@ -6,6 +6,7 @@ import React, { useState, useEffect } from "react";
 import styles from "app/style/styleRecipes.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import NavBar from "@/app/NavBar";
 
 const OnigiriRecipe = {
     ingredients: [
@@ -158,6 +159,7 @@ const RecipeCard = ({ recipe }) => {
 
     return (
         <div className={styles.container}>
+            <NavBar />
             <div className={styles.card}>
                 <h1>Onigiri Recipe</h1>
                 <div className={styles.imageContainer}>

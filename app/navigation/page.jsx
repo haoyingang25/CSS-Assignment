@@ -6,10 +6,12 @@ import React from "react";
 import Link from "next/link";
 import styles from "../style/stylesNav.module.css"; // Import the CSS module
 import InteractiveMap from "./InteractiveMap"; // Import the InteractiveMap component
+import NavBar from "../NavBar"; // Import the NavBar component
 
 const HomePage = () => {
   return (
     <div className={styles.container}>
+      <NavBar /> {/* Add the NavBar component here */}
       <header>
         <h1 className={styles.title}>Explore Foods Around the World</h1>
       </header>

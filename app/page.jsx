@@ -1,31 +1,19 @@
 /*Ang Hao Ying S10270430*/
 /*Ayden S10266744*/
-/*Kyston*/
+/*Kyston S10270092*/
 "use client"; // Indicates that this file uses client-side features of Next.js
 
 import React from "react"; // Importing React to use JSX and React components
 import Link from "next/link"; // Importing Link component for navigation in Next.js
 import Image from "next/image"; // Importing Image component for optimized image handling in Next.js
 import styles from "./style/styleMain.module.css"; // Importing the CSS module for styling
+import NavBar from "app/NavBar";
 
 const HomePage = () => {
   return (
     <div className={styles.mainPage}> {/* Main container for the homepage, applying styles from the CSS module */}
+      <NavBar /> {/* Add the NavBar component here */}
       
-      {/* Subheaders aligned horizontally at the top */}
-      <div className={styles.subheaderContainer}>
-        <Link href="/about"> {/* Navigation link to 'About Us' page */}
-          <h2 className={styles.subheader}>About Us</h2>
-        </Link>
-        <Link href="/history"> {/* Navigation link to 'History' page */}
-          <h2 className={styles.subheader}>History</h2>
-        </Link>
-      </div>
-
-      {/* Logo at the top left */}
-      <div className={styles.logoContainer}>
-        <Image src="/logo.jpeg" alt="Logo" className={styles.logo} width={200} height={200} /> {/* Displaying the website logo */}
-      </div>
 
       {/* Main title */}
       <h1 className={styles.title}><center>Ready To Explore?</center></h1> {/* Main title for the homepage */}

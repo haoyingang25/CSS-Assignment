@@ -12,6 +12,7 @@ const JapaneseCuisine = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Japanese Cuisine</h1>
+      <h1 className={styles.subtitle}>Popular Japanese Dishes We Reccomend!</h1>
       <ul className={styles.list}>
         {japaneseFoods.map((food, index) => (
           <li key={index} className={styles.listItem}>

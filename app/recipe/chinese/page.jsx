@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "app/style/styleMainRecipe.module.css";
+import NavBar from "app/NavBar";
 
 const chineseRecipes = [
     {
@@ -36,6 +37,7 @@ const chineseRecipes = [
 const ChineseRecipePage = () => {
     return (
         <div className={styles.container}>
+            <NavBar />
             <h1 className={styles.title}>Delicious Chinese Recipes</h1>
             <div className={styles.grid}>
                 {chineseRecipes.map((recipe, index) => (

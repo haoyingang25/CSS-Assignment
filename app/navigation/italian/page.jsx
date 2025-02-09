@@ -12,6 +12,7 @@ const ItalianCuisine = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Italian Cuisine</h1>
+      <h1 className={styles.subtitle}>Popular Italian Dishes We Reccomend!</h1>
       <ul className={styles.list}>
         {italianFoods.map((food, index) => (
           <li key={index} className={styles.listItem}>

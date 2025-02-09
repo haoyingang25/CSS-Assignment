@@ -1,6 +1,7 @@
 /*Ang Hao Ying S10270430*/
 /*Ayden S10266744*/
-/*Kyston*/
+/*Kyston S10270092*/
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image"; // Import Image component for the logo
