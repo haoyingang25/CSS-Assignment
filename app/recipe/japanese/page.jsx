@@ -120,6 +120,7 @@ const JapaneseRecipePage = () => {
                 </div>
             </div>
         </motion.div>
+    </div>
     );
 };
 

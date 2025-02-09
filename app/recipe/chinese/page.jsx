@@ -108,6 +108,7 @@ const ChineseRecipePage = () => {
                 </div>
             </div>
         </motion.div>
+    </div>
     );
 };
 

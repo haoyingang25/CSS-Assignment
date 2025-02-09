@@ -40,32 +40,14 @@ const FavPage = () => {
   if (!cuisineData || Object.keys(cuisineData).length === 0) {
     return <p>Loading...</p>;
   }
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }} // Start with 0 opacity and slightly shifted down
-            animate={{ opacity: 1, y: 0 }} // Animate to full opacity and original position
-            transition={{ duration: 0.8, ease: "easeOut" }} // Animation duration and easing
-            className={styles.carouselContainer}
-        >
-            {/* Page Title */}
-            <h1 className={styles.pageTitle}>Your Favorite Dishes</h1>
-            <div className={styles.swiper}>
-                <div className={styles.favoritesSection}>
-                    {/* Check if there are any favorite dishes */}
-                    {favorites.length > 0 ? (
-                        <div className={styles.favoritesGrid}>
-                            {/* Map through the favorite dish IDs to display their details */}
-                            {favorites.map((dishId) => {
-                                // Safely find the dish details from cuisineData based on the dish ID
-                                const dish = Object.keys(cuisineData)
-                                    .flatMap((cuisine) => {
-                                        const cuisineItems = cuisineData[cuisine] || [];
-                                        return cuisineItems.map((item) => ({ ...item, cuisine }));
-                                    })
-                                    .find((item) => item.id === dishId);
 
   return (
-    <div className={styles.carouselContainer}>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }} // Start with 0 opacity and slightly shifted down
+      animate={{ opacity: 1, y: 0 }} // Animate to full opacity and original position
+      transition={{ duration: 0.8, ease: "easeOut" }} // Animation duration and easing
+      className={styles.carouselContainer}
+    >
       {/* Page Title */}
       <h1 className={styles.pageTitle}>Your Favorite Dishes</h1>
       <div className={styles.swiper}>
@@ -193,23 +175,8 @@ const FavPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
-                {/* Right side of the footer */}
-                <div className={styles.footerRight}>
-                    <div className={styles.footerSection}>
-                        <h3 className={styles.footerTitle}>Follow Us</h3>
-                        <p className={styles.footerContent}>Instagram | Facebook | Twitter</p>
-                    </div>
-                    <div className={styles.footerSection}>
-                        <h3 className={styles.footerTitle}>Newsletter</h3>
-                        <p className={styles.footerContent}>Stay updated with the latest food news.</p>
-                        <p className={styles.footerContent}>Sign up for our newsletter!</p>
-                    </div>
-                </div>
-            </div>
-        </motion.div>
-    );
 };
 
 export default FavPage;
