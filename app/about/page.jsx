@@ -1,5 +1,5 @@
 /*Ang Hao Ying S10270430F*/
-/*Ayden S10266744*/
+/*Ayden Chionh S10266744E*/
 /*TEO WEE CHERNG KYSTON S10270092H*/
 
 import React from "react";
