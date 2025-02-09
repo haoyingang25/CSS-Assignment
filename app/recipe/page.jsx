@@ -123,8 +123,8 @@ const MainRecipePage = () => {
                     <div className={styles.footerSection}>
                         <h3 className={styles.footerTitle}>Follow Us</h3>
                         <p className={styles.footerContent}>
-                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a> |
-                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a> |
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a> {" "}|{" "}
+                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a> {" "}|{" "}
                             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
                         </p>
                     </div>

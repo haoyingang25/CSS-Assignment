@@ -31,38 +31,54 @@ const AboutPage = () => {
                 <button className={styles.backButton}>Back to Home</button>
             </Link>
 
-            <div className={styles.footer}>
-                <div className={styles.footerLeft}>
-                    <div className={styles.footerSection}>
-                        <h3 className={styles.footerTitle}>About</h3>
-                        <p className={styles.footerContent}>
-                            Sharing the best food experiences from around the world.
-                        </p>
+                {/* Footer Section */}
+                <div className={styles.footer}>
+                    <div className={styles.footerLeft}>
+                        <div className={styles.footerSection}>
+                            <h3 className={styles.footerTitle}>About</h3>
+                            <p className={styles.footerContent}>
+                                Sharing the best food experiences from around the world.
+                            </p>
+                        </div>
+                        <div className={styles.footerSection}>
+                            <h3 className={styles.footerTitle}>Contact</h3>
+                            <p className={styles.footerContent}>Email: contact@foodblog.com</p>
+                            <p className={styles.footerContent}>
+                                Follow us on social media for the latest updates!
+                            </p>
+                        </div>
                     </div>
-                    <div className={styles.footerSection}>
-                        <h3 className={styles.footerTitle}>Contact</h3>
-                        <p className={styles.footerContent}>Email: contact@foodblog.com</p>
-                        <p className={styles.footerContent}>
-                            Follow us on social media for the latest updates!
-                        </p>
-                    </div>
-                </div>
-                <div className={styles.footerRight}>
+                    <div className={styles.footerRight}>
                     <div className={styles.footerSection}>
                         <h3 className={styles.footerTitle}>Follow Us</h3>
-                        <p className={styles.footerContent}>Instagram | Facebook | Twitter</p>
-                    </div>
-                    <div className={styles.footerSection}>
-                        <h3 className={styles.footerTitle}>Newsletter</h3>
                         <p className={styles.footerContent}>
-                            Stay updated with the latest food news.
-                        </p>
-                        <p className={styles.footerContent}>Sign up for our newsletter!</p>
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                                Instagram
+                            </a> | 
+                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                                Facebook
+                            </a> | 
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                                Twitter
+                            </a>
+                         </p>
+                    </div>
+
+                        <div className={styles.footerSection}>
+                            <h3 className={styles.footerTitle}>Newsletter</h3>
+                            <p className={styles.footerContent}>
+                                Stay updated with the latest food news.
+                            </p>
+                            {/* Text box for email input */}
+                            <input
+                                type="email"
+                                placeholder="Enter your email"
+                                className={styles.footerInput}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
-
 export default AboutPage;

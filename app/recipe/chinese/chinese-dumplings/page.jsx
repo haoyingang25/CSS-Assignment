@@ -1,5 +1,5 @@
-//Ayden Chionh S10266744
-//recipe/chinese/chinese-dumplings/page.jsx
+// Ayden Chionh S10266744
+// recipe/chinese/chinese-dumplings/page.jsx
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -284,10 +284,7 @@ const RecipeCard = ({ recipe }) => {
                     </div>
                 </div>
 
-                <Link href="/recipe" passHref>
-                    <button className={styles.backButton}>Back to recipes</button>
-                </Link>
-
+                {/* Footer Section */}
                 <div className={styles.footer}>
                     <div className={styles.footerLeft}>
                         <div className={styles.footerSection}>
@@ -305,16 +302,32 @@ const RecipeCard = ({ recipe }) => {
                         </div>
                     </div>
                     <div className={styles.footerRight}>
-                        <div className={styles.footerSection}>
-                            <h3 className={styles.footerTitle}>Follow Us</h3>
-                            <p className={styles.footerContent}>Instagram | Facebook | Twitter</p>
-                        </div>
+                    <div className={styles.footerSection}>
+                        <h3 className={styles.footerTitle}>Follow Us</h3>
+                        <p className={styles.footerContent}>
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                                Instagram
+                            </a> | 
+                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                                Facebook
+                            </a> | 
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                                Twitter
+                            </a>
+                         </p>
+                    </div>
+
                         <div className={styles.footerSection}>
                             <h3 className={styles.footerTitle}>Newsletter</h3>
                             <p className={styles.footerContent}>
                                 Stay updated with the latest food news.
                             </p>
-                            <p className={styles.footerContent}>Sign up for our newsletter!</p>
+                            {/* Text box for email input */}
+                            <input
+                                type="email"
+                                placeholder="Enter your email"
+                                className={styles.footerInput}
+                            />
                         </div>
                     </div>
                 </div>
@@ -323,10 +336,6 @@ const RecipeCard = ({ recipe }) => {
     );
 };
 
-export default function Home() {
-    return (
-        <div className={styles.container}>
-            <RecipeCard recipe={chineseDumplingRecipe} />
-        </div>
-    );
+export default function ChineseDumplingsRecipe() {
+    return <RecipeCard recipe={chineseDumplingRecipe} />;
 }
