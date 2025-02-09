@@ -1,11 +1,10 @@
-//Ayden Chionh S10266744
-// app/recipe/page.jsx
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion"; // Import Framer Motion
 import styles from "app/style/styleMainRecipe.module.css";
+import NavBar from "../NavBar";
 
 const recipes = [
     {
@@ -46,6 +45,7 @@ const MainRecipePage = () => {
             animate={{ opacity: 1 }} // Animate to full opacity
             transition={{ duration: 1 }} // Duration of the animation
         >
+            <NavBar />
             <h1 className={styles.title}>Explore Recipes from Around the World</h1>
             <div className={styles.grid}>
                 {recipes.map((recipe, index) => (
@@ -93,6 +93,7 @@ const MainRecipePage = () => {
                     </Link>
                 </div>
             </div>
+
             {/* Footer Section */}
             <motion.div
                 className={styles.footer}
@@ -121,12 +122,25 @@ const MainRecipePage = () => {
                 <div className={styles.footerRight}>
                     <div className={styles.footerSection}>
                         <h3 className={styles.footerTitle}>Follow Us</h3>
-                        <p className={styles.footerContent}>Instagram | Facebook | Twitter</p>
+                        <p className={styles.footerContent}>
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a> |
+                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a> |
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+                        </p>
                     </div>
                     <div className={styles.footerSection}>
                         <h3 className={styles.footerTitle}>Newsletter</h3>
                         <p className={styles.footerContent}>Stay updated with the latest food news.</p>
-                        <p className={styles.footerContent}>Sign up for our newsletter!</p>
+                        <form className={styles.newsletterForm}>
+                            <input
+                                type="email"
+                                placeholder="Enter your email"
+                                className={styles.newsletterInput}
+                            />
+                            <button type="submit" className={styles.newsletterButton}>
+                                Sign Up
+                            </button>
+                        </form>
                     </div>
                 </div>
             </motion.div>
@@ -135,5 +149,3 @@ const MainRecipePage = () => {
 };
 
 export default MainRecipePage;
-
-

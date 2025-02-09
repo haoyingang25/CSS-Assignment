@@ -165,6 +165,7 @@ const RecipeCard = ({ recipe }) => {
 
     return (
         <div className={styles.container}>
+            <NavBar />
             <div className={styles.card}>
                 <h1>Popiah Recipe</h1>
                 <div className={styles.imageContainer}>

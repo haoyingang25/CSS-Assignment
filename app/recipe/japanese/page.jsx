@@ -6,6 +6,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "app/style/styleMainRecipe.module.css";
+import NavBar from "@/app/NavBar";
 import { motion } from "framer-motion"; // Import Framer Motion
 
 const japaneseRecipes = [
@@ -38,6 +39,8 @@ const japaneseRecipes = [
 
 const JapaneseRecipePage = () => {
     return (
+        <div className={styles.container}>
+            <NavBar />
         <motion.div
             initial={{ opacity: 0, y: 50 }} // Start hidden and below position
             animate={{ opacity: 1, y: 0 }} // Fade in and slide to original position

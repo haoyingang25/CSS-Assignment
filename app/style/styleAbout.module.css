@@ -7,10 +7,9 @@
     justify-content: space-between; /* Space between content and footer */
     align-items: center;
     padding: 2rem;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Lora', serif;
     color: #333;
 }
-
 
 /* Header section styling */
 .header {
@@ -62,7 +61,6 @@
     overflow-y: auto; /* Enable vertical scrolling */
     height: calc(100vh - 120px); /* Ensure it doesn't overlap the fixed navbar */
 }
-
 
 /* Content sections */
 .content {
@@ -152,46 +150,28 @@
 
 /* Navbar styling */
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #6B4E3D; /* Dark brown */
-    padding: 0.6rem 1.5rem; /* Reduced padding for a smaller navbar */
+    background-color: #6B4E3D;
     width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for navbar */
-}
-
-.logoContainer {
+    overflow: hidden;
     display: flex;
     align-items: center;
-}
-
-.logo {
-    display: block; /* Ensures no white box appears */
-    width: 120px; /* Reduced the logo size */
-    height: auto;
-}
-
-.navLinks {
+    padding: 10px 20px;
+  }
+  
+  .navList {
+    list-style-type: none;
+    margin: 0 auto; /* Center the nav list */
+    padding: 0;
     display: flex;
-    gap: 2rem; /* Increased gap between buttons */
-}
-
-.navButton {
-    color: #fff;
+  }
+  
+  .navItem {
+    padding: 14px 20px;
+  }
+  
+  .navItem a {
+    color: white;
+    text-align: center;
     text-decoration: none;
-    font-size: 1.1rem; /* Adjusted font size for buttons */
-    font-weight: bold;
-    border: none;
-    background: none; /* Remove background for cleaner look */
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.navButton:hover {
-    color: #f0b04e; /* Lighter golden color for hover effect */
-}
+    display: block;
+  }

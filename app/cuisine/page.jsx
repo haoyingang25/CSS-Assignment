@@ -5,6 +5,30 @@
 import React from "react";
 import { motion } from "framer-motion"; // Import Framer Motion
 import Carousel from "../gallery/carousel"; // Correct relative path
+import NavBar from "../NavBar";
+
+const CuisinePage = () => {
+  return (
+    <div
+      style={{
+        minHeight: "100vh",
+        backgroundColor: "#DED3C2", // Soft Ivory for an elegant base
+        padding: "40px 20px",
+      }}
+    >
+      <NavBar />
+      <h1
+        style={{
+          textAlign: "center",
+          marginTop: "50px",
+          marginBottom: "20px",
+          color: "#6B4E3D", // Deep Espresso for sophistication
+          fontFamily: "'Playfair Display', serif",
+          fontWeight: "bold",
+        }}
+      >
+        Visit the Top Rated Cuisines!
+      </h1>
 
 const CuisinePage = () => {
     return (

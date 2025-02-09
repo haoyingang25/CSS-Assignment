@@ -1,36 +1,23 @@
 /*Ang Hao Ying S10270430*/
 /*Ayden S10266744*/
-/*Kyston*/
+/*Kyston S10270092*/
 "use client"; // Indicates that this file uses client-side features of Next.js
 
 import React from "react"; // Importing React to use JSX and React components
 import Link from "next/link"; // Importing Link component for navigation in Next.js
 import Image from "next/image"; // Importing Image component for optimized image handling in Next.js
 import styles from "./style/styleMain.module.css"; // Importing the CSS module for styling
+import NavBar from "app/NavBar";
 
 const HomePage = () => {
   return (
     <div className={styles.mainPage}> {/* Main container for the homepage, applying styles from the CSS module */}
-      
-      {/* Subheaders aligned horizontally at the top */}
-      <div className={styles.subheaderContainer}>
-        <Link href="/about"> {/* Navigation link to 'About Us' page */}
-          <h2 className={styles.subheader}>About Us</h2>
-        </Link>
-        <Link href="/history"> {/* Navigation link to 'History' page */}
-          <h2 className={styles.subheader}>History</h2>
-        </Link>
-      </div>
-
-      {/* Logo at the top left */}
-      <div className={styles.logoContainer}>
-        <Image src="/logo.jpeg" alt="Logo" className={styles.logo} width={200} height={200} /> {/* Displaying the website logo */}
-      </div>
+      <NavBar /> {/* Add the NavBar component here */}
 
       {/* Main title */}
       <h1 className={styles.title}><center>Ready To Explore?</center></h1> {/* Main title for the homepage */}
       <hr className={styles.horizontalLine} /> {/* Horizontal line for visual separation */}
-      
+
       {/* Navigation Tabs with Individual Shadow Containers */}
       <div className={styles.tabsContainer}>
         
@@ -40,32 +27,31 @@ const HomePage = () => {
             <div className={styles.tab}>
               <Image src="/bibimbap.jpg" alt="Cuisine" className={styles.tabImage} fill style={{ objectFit: "cover" }} /> {/* Image for the cuisine tab */}
               <div className={styles.overlay}></div> {/* Overlay effect on hover */}
-              <span className={styles.tabText}>Top Rated Cuisines in Singapore</span> {/* Tab text */}
+              <span className={styles.tabText}>Top Rated Cuisines Around The World</span> {/* Tab text */}
             </div>
-            <p className={styles.tabDescription}>Discover the finest cuisines in Singapore, from traditional dishes to contemporary fusion.</p> {/* Description for the tab */}
+            <p className={styles.tabDescription}>Explore the world's top-rated cuisines, from traditional dishes to innovative fusion creations that redefine flavors.</p> {/* Description for the tab */}
           </div>
         </Link>
         
         {/* Link to 'Recipe' section with an image and description */}
         <Link href="recipe">
-            <div className={styles.tabContainerWithShadow}>
-                <div className={styles.tab}>
-                    <Image src="/carrotcake.jpg" alt="Recipe" className={styles.tabImage} fill style={{ objectFit: "cover" }} />
-                    <div className={styles.overlay}></div>
-                    <span className={styles.tabText}>Recipe</span>
-                </div>
-                <p className={styles.tabDescription}>Get the best recipes to try at home, from desserts to main courses.</p>
+          <div className={styles.tabContainerWithShadow}>
+            <div className={styles.tab}>
+              <Image src="/carrotcake.jpg" alt="Recipe" className={styles.tabImage} fill style={{ objectFit: "cover" }} />
+              <div className={styles.overlay}></div>
+              <span className={styles.tabText}>Recipe</span>
             </div>
+            <p className={styles.tabDescription}>Get the best recipes to try at home, from desserts to main courses.</p>
+          </div>
         </Link>
 
-        
         {/* Link to 'Navigation' section with an image and description */}
         <Link href="/navigation">
           <div className={styles.tabContainerWithShadow}>
             <div className={styles.tab}>
               <Image src="/burger.jpg" alt="Navigation" className={styles.tabImage} fill style={{ objectFit: "cover" }} /> {/* Image for the navigation tab */}
               <div className={styles.overlay}></div> {/* Overlay effect on hover */}
-              <span className={styles.tabText}>Navigation</span> {/* Tab text */}
+              <span className={styles.tabText}>Food Map</span> {/* Tab text */}
             </div>
             <p className={styles.tabDescription}>Explore different locations for food lovers in various cities and regions.</p> {/* Description for the tab */}
           </div>
@@ -92,12 +78,33 @@ const HomePage = () => {
         <div className={styles.footerRight}>
           <div className={styles.footerSection}>
             <h3 className={styles.footerTitle}>Follow Us</h3> {/* Title for 'Follow Us' section */}
-            <p className={styles.footerContent}>Instagram | Facebook | Twitter</p> {/* Social media platforms */}
+            <p className={styles.footerContent}>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                Instagram
+              </a> 
+              |
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                Facebook
+              </a> 
+              |
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                Twitter
+              </a>
+            </p> {/* Social media platforms with links */}
           </div>
           <div className={styles.footerSection}>
-            <h3 className={styles.footerTitle}>Newsletter</h3> {/* Title for 'Newsletter' section */}
-            <p className={styles.footerContent}>Stay updated with the latest food news.</p> {/* Newsletter content */}
-            <p className={styles.footerContent}>Sign up for our newsletter!</p> {/* Call to action for the newsletter */}
+            <h3 className={styles.footerTitle}>Newsletter</h3>
+            <p className={styles.footerContent}>Stay updated with the latest food news.</p>
+            <form className={styles.newsletterForm}>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className={styles.newsletterInput}
+              />
+              <button type="submit" className={styles.newsletterButton}>
+                Sign Up
+              </button>
+            </form>
           </div>
         </div>
       </div>

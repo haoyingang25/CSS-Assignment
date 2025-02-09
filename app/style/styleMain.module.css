@@ -2,7 +2,7 @@
 .mainPage {
   padding: 40px;
   min-height: 100vh;
-  background-color: #F8F5F2;
+  background-color: #DED3C2;
   font-family: "Lora", serif;
   overflow-y: auto;
   position: relative;
@@ -436,4 +436,40 @@
   border: none;
   border-top: 2px solid rgba(0, 0, 0, 0.3); /* Adjust color and thickness */
   margin: 20px 0; /* Space before and after the line */
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #6B4E3D;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.navList {
+  list-style-type: none;
+  margin: 0 auto; /* Center the nav list */
+  padding: 0;
+  display: flex;
+}
+
+.navItem {
+  padding: 14px 20px;
+}
+
+.navItem a {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+.navItem a:hover {
+  background-color: #ddd;
+  color: black;
 }

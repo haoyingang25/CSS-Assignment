@@ -14,6 +14,7 @@
 import React, { useState, useEffect } from "react"; // use React and tools to manage data and actions in the webpage
 import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper components
 import { Navigation, Pagination, Autoplay } from "swiper/modules"; // Import Swiper functionalities
+import { motion } from "framer-motion";
 
 // Import Swiper styles
 import "swiper/css"; 
@@ -37,7 +38,7 @@ const cuisineData = {
       src: "/chinese dumplings.jpg", 
       alt: "Chinese Dumplings", 
       description: "Steamed or fried dumplings filled with meat and vegetables.",
-      location: { name: "Dumpling", address: "1 Chinatown Rd, Singapore" },
+      location: { name: "Din Tai Fung ", address: "China, Bei Jing Shi, Chao Yang Qu. 新源西里中街24号, Postal Code 100027" },
       rating: { stars: 4.5, reviews: 120 },
     },
 
@@ -46,8 +47,8 @@ const cuisineData = {
       src: "/pekingDuck.jpg", 
       alt: "Peking Duck", 
       description: "Crispy duck served with pancakes and hoisin sauce.",
-      location: { name: "Peking Restaruant", address: "6 Orchard Rd, Singapore" },
-      rating: { stars: 4.5, reviews: 1200 },
+      location: { name: "QuanJude Roast Duck ", address: " 9 Shuaifuyuan Hu Tong, Wangfujing, Dongcheng, Beijing China 100005 " },
+      rating: { stars: 4.0, reviews: 1302 },
     },
     
     { 
@@ -55,8 +56,8 @@ const cuisineData = {
       src: "/carrotcake.jpg", 
       alt: "Carrot Cake", 
       description: "Sweet, Soft, Savoury.",
-      location: { name: "Lau Pa Sat", address: "23 Raffles Rd, Singapore" },
-      rating: { stars: 4.5, reviews: 1222 },
+      location: { name: "Lau Pa Sat", address: "18 Raffles Quay, Singapore 048582" },
+      rating: { stars: 4.4, reviews: 2445 },
     },
 
     { 
@@ -64,8 +65,8 @@ const cuisineData = {
       src: "/dimsum.jpg", 
       alt: "Dim Sum", 
       description: "Be spoilt for the wide variety of choices.",
-      location: { name: "Crystal Jade", address: "90 ChinaTown Rd, Singapore" },
-      rating: { stars: 4.5, reviews: 2000 },
+      location: { name: "Jade Garden", address: "1121 Yan an Rd (M), Jing An, Shanghai, China, 200041 " },
+      rating: { stars: 4.7, reviews: 2000 },
     },
 
     {
@@ -73,8 +74,8 @@ const cuisineData = {
       src: "/popiah.JPG", 
       alt: "Popiah", 
       description: "Traditional chinese snack.",
-      location: { name: "Clementi Food Court", address: "12 Clementi Rd, Singapore" },
-      rating: { stars: 4.5, reviews: 100 },
+      location: { name: "Old Airport Road Food Center ", address: "51 old airport road. Singapore 390051" },
+      rating: { stars: 4.3, reviews: 658 },
     }
 
   ],
@@ -82,18 +83,18 @@ const cuisineData = {
     { 
       id: 6, 
       src: "/lasanga.png", 
-      alt: "lasagna", 
+      alt: "Lasagna", 
       description: "Enjoy it layer by layer. Flavourful.",
-      location: { name: "Chill Cafe", address: "33 Marina Bay Dr, Singapore" },
-      rating: { stars: 4.5, reviews: 1000 },
+      location: { name: "Trattoria Da Enzo al 29", address: "Via Dei Vascellari, 29, 00153 Roma RM Italy" },
+      rating: { stars: 4.4, reviews: 5382 },
     },
     { 
       id: 7, 
       src: "/pizza.jpg", 
       alt: "Pizza", 
       description: "Thin and crispy golden crust and it comes with cheese pull.",
-      location: { name: "Pizza Heaven", address: "159 City Square, Singapore" },
-      rating: { stars: 4.5, reviews: 1201 },
+      location: { name: "L'antica Pizzeria Da Michele", address: "Via Cesare Sersale, 1, 80139 Napoli NA, Italy " },
+      rating: { stars: 4.4 , reviews: 1201 },
     },
 
     { 
@@ -101,8 +102,8 @@ const cuisineData = {
       src: "/pasta.jpg", 
       alt: "Pasta", 
       description: "Savoury.",
-      location: { name: "Tipo", address: "101 City Square, Singapore" },
-      rating: { stars: 4.5, reviews: 1203 },
+      location: { name: "De Oscar", address: "Via Lazzaro Palazzi, 4, 20124 Milano MI, Italy " },
+      rating: { stars: 4.3, reviews: 1203 },
     },
 
     { 
@@ -110,8 +111,8 @@ const cuisineData = {
       src: "/Tiramisu.jpg", 
       alt: "Tiramisu Cake", 
       description: "Suitable for coffee lovers. Alcohol-free!",
-      location: { name: "Dessert Palace", address: "99 City Square, Singapore" },
-      rating: { stars: 4.5, reviews: 1250 },
+      location: { name: "Le Volpi e l'Uva", address: "Piazza dei Rossi, 1R, 50125 Firenze Fl, Italy " },
+      rating: { stars: 4.7, reviews: 1250 },
     },
   ],
   
@@ -121,16 +122,16 @@ const cuisineData = {
       src: "/bibimbap.jpg", 
       alt: "Bibimbap", 
       description: "Hearty bowl of rice.",
-      location: { name: "Korean", address: "66 Tanjong Pagar Rd, Singapore" },
-      rating: { stars: 4.5, reviews: 1206 },
+      location: { name: "Myeondong Joomak ", address: "25-1 Myeondong 10-Gil, Jung District Seoul, South Korea" },
+      rating: { stars: 4.9 , reviews: 1206 },
     },
     { 
       id: 11, 
       src: "/tteokbooki.jpg", 
       alt: "Korean Rice Cake", 
       description: "Slightly Spicy and Chewy.",
-      location: { name: "Rice Cake", address: "10 Clake Quay Rd, Singapore" },
-      rating: { stars: 4.5, reviews: 1270 },
+      location: { name: "Bunsigdang", address: "192 Jungang-Daero, Dong-Gu, Busan, South Korea" },
+      rating: { stars: 4.7, reviews: 1270 },
     },
 
     { 
@@ -138,8 +139,8 @@ const cuisineData = {
       src: "/kbbq.jpg", 
       alt: "Korean BBQ", 
       description: "Hear the sizzling sound?",
-      location: { name: "Gangnam KBBQ", address: "5 Tanjong Pagar Rd, Singapore" },
-      rating: { stars: 4.5, reviews: 1210 },
+      location: { name: "Daejeon Korean BBQ Chicken Restaurant Hoyeonjae", address: "South Korea, Bongmyeon-dong 623-3 KR" },
+      rating: { stars: 4.9, reviews: 1210 },
     }
   ],
   Japanese: [
@@ -148,16 +149,16 @@ const cuisineData = {
       src: "/japanese food.jpg", 
       alt: "Sushi", 
       description: "Freshly made sushi.",
-      location: { name: "Sushi", address: "66 Clarke Quay, Singapore" },
-      rating: { stars: 4.5, reviews: 1290 },
+      location: { name: "Sukiyabashi Jiro", address: "104-0061 Tokyo, Chuo city, Ginza, 4 Chome-2-15" },
+      rating: { stars: 3.9, reviews: 1290 },
     },
     { 
       id: 14, 
       src: "/ramen.jpg", 
       alt: "Ramen", 
       description: "Slup Slup Slup. Enjoy the soup and noodles together",
-      location: { name: "Ramen", address: "7 Orchard Gateway, Singapore" },
-      rating: { stars: 4.5, reviews: 3000 },
+      location: { name: "Ichiran Ramen", address: "1 Chome-4-16 Dotonburi, Chuo Ward, Osaka, 542-0071" },
+      rating: { stars: 4.3, reviews: 3000 },
     },
 
     { 
@@ -165,8 +166,8 @@ const cuisineData = {
       src: "/tonkatsu.jpg", 
       alt: "Tonkatsu", 
       description: "Japanese fried chicken/pork/beef.",
-      location: { name: "Tonkatsu", address: "70 Westage Gateway, Singapore" },
-      rating: { stars: 4.5, reviews: 5020 },
+      location: { name: "Tonkatsu KATSUKURA", address: "530-8350 Osaka, Kita ward, Kakudacho, 8-7" },
+      rating: { stars: 4.1, reviews: 5020 },
     },
 
     { 
@@ -174,7 +175,7 @@ const cuisineData = {
       src: "/Onigiri.jpg", 
       alt: "Onigiri", 
       description: "Japanese rice ball.",
-      location: { name: "Japan shop", address: "8 Westage Gateway, Singapore" },
+      location: { name: "Gochisou Yakimusubi Onimaru Kyoto Shijo Kawaramachi", address: "7 otabimiyamotocho, Shimogyo Ward, Kyoto, 600-8004" },
       rating: { stars: 4.5, reviews: 1209 },
     },
 
@@ -183,8 +184,8 @@ const cuisineData = {
       src: "/pancakes.jpeg", 
       alt: "Japanese Pancake", 
       description: "Soft and Fluffy, topped with sweet fruits and cream.",
-      location: { name: "Pancake", address: "8 Vivo City, Singapore" },
-      rating: { stars: 4.5, reviews: 1209 },
+      location: { name: "A Happy Pancake Shinsaibashi ", address: "542-0086 Osaka, Chuo ward, Nishishinsaibashi, 2 Chome-10-32" },
+      rating: { stars: 4.4, reviews: 1209 },
     }
 
   ],
@@ -338,12 +339,34 @@ const Carousel = () => {
         <div className={styles.footerRight}>
           <div className={styles.footerSection}>
             <h3 className={styles.footerTitle}>Follow Us</h3> {/* Title for 'Follow Us' section */}
-            <p className={styles.footerContent}>Instagram | Facebook | Twitter</p> {/* Social media platforms */}
+            <p className={styles.footerContent}>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                Instagram
+              </a> 
+              |
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                Facebook
+              </a> 
+              |
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+              Twitter 
+              </a>
+            </p>{/* Social media platforms with links */}
+
           </div>
           <div className={styles.footerSection}>
-            <h3 className={styles.footerTitle}>Newsletter</h3> {/* Title for 'Newsletter' section */}
-            <p className={styles.footerContent}>Stay updated with the latest food news.</p> {/* Newsletter content */}
-            <p className={styles.footerContent}>Sign up for our newsletter!</p> {/* Call to action for the newsletter */}
+            <h3 className={styles.footerTitle}>Newsletter</h3>
+              <p className={styles.footerContent}>Stay updated with the latest food news.</p>
+                <form className={styles.newsletterForm}>
+                    <input
+                      type="email"
+                      placeholder="Enter your email"
+                      className={styles.newsletterInput}
+                    />
+                    <button type="submit" className={styles.newsletterButton}>
+                      Sign Up
+                    </button>
+                </form>
           </div>
         </div>
       </div>
