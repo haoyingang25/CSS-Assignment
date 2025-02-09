@@ -21,7 +21,7 @@ const CuisinePage = () => {
           textAlign: "center",
           marginTop: "50px",
           marginBottom: "20px",
-          color: "#3E2723", // Deep Espresso for sophistication
+          color: "#6B4E3D", // Deep Espresso for sophistication
           fontFamily: "'Playfair Display', serif",
           fontWeight: "bold",
         }}
