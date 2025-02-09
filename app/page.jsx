@@ -15,6 +15,7 @@ const HomePage = () => {
       <NavBar /> {/* Add the NavBar component here */}
       
 
+
       {/* Main title */}
       <h1 className={styles.title}><center>Ready To Explore?</center></h1> {/* Main title for the homepage */}
       <hr className={styles.horizontalLine} /> {/* Horizontal line for visual separation */}

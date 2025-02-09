@@ -181,4 +181,3 @@ const FavPage = () => {
 };
 
 export default FavPage;
-
