@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.logo}>
-        <img src="/logo.png" alt="Logo" />
+      <div className={styles.logoText}>SCHUMANN'S</div> {/* Text-based logo */}
       </div>
       <ul className={styles.navList}>
         <li className={styles.navItem}>
