@@ -1,0 +1,229 @@
+.container {
+  background-color: #DED3C2; /* Updated to match the color scheme */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  background-color: #4CAF50; /* Updated to match the color scheme */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px; /* Added border radius for consistency */
+}
+
+.title {
+  margin: 0;
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.navbar {
+  margin-top: 10px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.mapContainer {
+  margin: 20px auto;
+  width: 90%;
+}
+
+.mapWrapper {
+  border: 2px solid #4CAF50; /* Updated to match the color scheme */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cuisineSection {
+  margin: 20px auto;
+  width: 90%;
+}
+
+.cuisineCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.cuisineCard {
+  background-color: white; /* Updated to match the color scheme */
+  border: 1px solid #ddd;
+  border-radius: 16px; /* Updated to match the color scheme */
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow for consistency */
+}
+
+.cuisineCard img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.cuisineCard p {
+  margin: 10px 0 0;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: black; /* Set text color to black */
+}
+
+.cuisineCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+  background-color: #4CAF50; /* Updated to match the color scheme */
+  color: black;
+  text-align: center;
+  padding: 10px;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footerLeft,
+.footerRight {
+  flex: 1;
+}
+
+.footerSection {
+  margin-bottom: 20px;
+}
+
+.footerTitle {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.footerContent {
+  margin: 5px 0;
+}
+
+.backButton {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 20px auto;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  display: block;
+  width: fit-content;
+}
+
+.backButton:hover {
+  background-color: #218838;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.listItem {
+  margin-bottom: 20px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.imageContainer {
+  flex: 0 0 200px; /* Increased the width */
+  margin-right: 20px;
+  position: relative;
+}
+
+.image {
+  width: 200px; /* Increased the width */
+  height: 150px; /* Increased the height */
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.content {
+  flex: 1;
+}
+
+.label {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: black; /* Set text color to black */
+}
+
+.description,
+.location,
+.rating {
+  margin: 5px 0;
+  color: black; /* Set text color to black */
+}
+
+.buttonContainer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.buttonsWrapper {
+  display: inline-block;
+}
+
+.backToHomeButton {
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.backToHomeButton:hover {
+  background-color: #005bb5;
+}
