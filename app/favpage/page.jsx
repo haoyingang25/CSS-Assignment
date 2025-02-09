@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { cuisineData } from '../cuisineData/cuisineData'; // Ensure the path to the data is correct
 import styles from '../style/styleGallery.module.css'; // Import CSS module for styling
 import Link from 'next/link'; // Import Link component for navigation
+import { motion } from 'framer-motion'; // Import Framer Motion
 
 const FavPage = () => {
     const [favorites, setFavorites] = useState([]);
@@ -42,7 +43,12 @@ const FavPage = () => {
     }
 
     return (
-        <div className={styles.carouselContainer}>
+        <motion.div
+            initial={{ opacity: 0, y: 20 }} // Start with 0 opacity and slightly shifted down
+            animate={{ opacity: 1, y: 0 }} // Animate to full opacity and original position
+            transition={{ duration: 0.8, ease: "easeOut" }} // Animation duration and easing
+            className={styles.carouselContainer}
+        >
             {/* Page Title */}
             <h1 className={styles.pageTitle}>Your Favorite Dishes</h1>
             <div className={styles.swiper}>
@@ -149,8 +155,9 @@ const FavPage = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
 export default FavPage;
+
