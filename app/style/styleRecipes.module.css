@@ -244,6 +244,7 @@
 /* Navbar styles */
 .navbar {
     background-color: #6B4E3D;
+    width: 100%;
     overflow: hidden;
     display: flex;
     align-items: center;

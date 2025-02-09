@@ -27,6 +27,9 @@ const NavBar = () => {
         <li className={styles.navItem}>
           <Link href="/navigation">Food Map</Link>
         </li>
+        <li className={styles.navItem}>
+          <Link href="/favpage">Your Favourites</Link>
+        </li>
       </ul>
 
     </nav>
