@@ -1,5 +1,5 @@
 ﻿
-//Ayden Chionh S10266744
+//Ayden Chionh S10266744E
 //app/favorite-page/page.jsx
 'use client';
 
