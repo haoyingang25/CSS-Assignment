@@ -14,6 +14,7 @@
     "leaflet": "^1.9.4",
     "motion": "^12.4.1",
     "next": "14.0.2",
+    "punycode": "^2.3.1",
     "react": "^18",
     "react-dom": "^18",
     "react-fontawesome": "^1.7.1",

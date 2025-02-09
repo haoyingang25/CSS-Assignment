@@ -63,18 +63,12 @@ const ItalianCuisine = () => {
         <div className={styles.footerLeft}>
           <div className={styles.footerSection}>
             <h3 className={styles.footerTitle}>About</h3>
-            <p className={styles.footerContent}>
-              Sharing the best food experiences from around the world.
-            </p>
+            <p className={styles.footerContent}>Sharing the best food experiences from around the world.</p>
           </div>
           <div className={styles.footerSection}>
             <h3 className={styles.footerTitle}>Contact</h3>
-            <p className={styles.footerContent}>
-              Email: contact@foodblog.com
-            </p>
-            <p className={styles.footerContent}>
-              Follow us on social media for the latest updates!
-            </p>
+            <p className={styles.footerContent}>Email: contact@foodblog.com</p>
+            <p className={styles.footerContent}>Follow us on social media for the latest updates!</p>
           </div>
         </div>
 
@@ -83,17 +77,44 @@ const ItalianCuisine = () => {
           <div className={styles.footerSection}>
             <h3 className={styles.footerTitle}>Follow Us</h3>
             <p className={styles.footerContent}>
-              Instagram | Facebook | Twitter
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </a>{" "}  
+              |{" "}  
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Facebook
+              </a>{" "}  
+              |{" "}  
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Twitter
+              </a>
             </p>
           </div>
           <div className={styles.footerSection}>
             <h3 className={styles.footerTitle}>Newsletter</h3>
-            <p className={styles.footerContent}>
-              Stay updated with the latest food news.
-            </p>
-            <p className={styles.footerContent}>
-              Sign up for our newsletter!
-            </p>
+            <p className={styles.footerContent}>Stay updated with the latest food news.</p>
+            <form className={styles.newsletterForm}>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className={styles.newsletterInput}
+              />
+              <button type="submit" className={styles.newsletterButton}>
+                Sign Up
+              </button>
+            </form>
           </div>
         </div>
       </div>
